@@ -67,17 +67,17 @@ def _build_assistant(
         "provider": "deepgram",
         "model": "nova-2",
         "language": "en",
-        "confidenceThreshold": 0.4,
+        "confidenceThreshold": 0.5,
         "numerals": False,
     }
 
     # StartSpeakingPlan: only waitSeconds (API rejects onPunctuationSeconds, smartEndpointing, etc.)
-    start_speaking_plan = {"waitSeconds": 2}
+    start_speaking_plan = {"waitSeconds": 3}
 
     # StopSpeakingPlan: API expects numWords (not numberOfWords)
     stop_speaking_plan = {
-        "numWords": 1,
-        "voiceSeconds": 0.1,
+        "numWords": 3,
+        "voiceSeconds": 0.4,
         "backoffSeconds": 3,
     }
 
@@ -182,6 +182,48 @@ def _serialize_call(call) -> dict:
     if hasattr(call, "dict"):
         return call.dict()
     return dict(call) if not isinstance(call, dict) else call
+
+
+def get_call(call_id: str) -> Optional[dict]:
+    """
+    Fetch a call by ID from the Vapi API (GET /call/{id}).
+    Returns the call object as a dict, or None on error.
+    Per docs: artifact.recording is the recording URL when available.
+    """
+    from vapi import Vapi
+
+    try:
+        api_key, _ = _get_config()
+    except ValueError:
+        return None
+    client = Vapi(token=api_key)
+    try:
+        call = client.calls.get(call_id)
+        return _serialize_call(call)
+    except Exception:
+        return None
+
+
+def get_recording_url(call_id: str) -> Optional[str]:
+    """
+    Get the public recording URL for a call from the Vapi API (GET /call/{id}).
+    In SDK 1.9.x the URL is often at call.recordingUrl, not inside artifact.
+    """
+    call = get_call(call_id)
+    if not call:
+        return None
+    artifact = call.get("artifact") or {}
+    # Same order as webhook: call first, then artifact, then artifact.recording.url
+    recording_url = (
+        call.get("recordingUrl")
+        or call.get("recording_url")
+        or artifact.get("recordingUrl")
+        or artifact.get("recording_url")
+        or (artifact.get("recording") or {}).get("url")
+    )
+    if not recording_url and isinstance(artifact.get("recording"), str):
+        recording_url = artifact.get("recording")
+    return recording_url or None
 
 
 if __name__ == "__main__":

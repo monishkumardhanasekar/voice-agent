@@ -93,11 +93,30 @@ def extract_transcript_from_webhook(payload: Dict[str, Any]) -> Optional[Dict[st
         "name": None,
     }
 
-    # Raw transcript and recording URL, if available
-    raw_transcript = artifact.get("transcript")
+    # Raw transcript: Vapi may send string ("AI: ... User: ...") or array of {role, message, time}
+    _raw = artifact.get("transcript")
+    if isinstance(_raw, list):
+        lines = []
+        for item in _raw:
+            if isinstance(item, dict):
+                role = (item.get("role") or "unknown").capitalize()
+                msg = item.get("message") or item.get("content") or ""
+                lines.append(f"{role}: {msg}")
+            else:
+                lines.append(str(item))
+        raw_transcript = "\n".join(lines) if lines else None
+    else:
+        raw_transcript = _raw if isinstance(_raw, str) else None
 
-    recording = artifact.get("recording") or {}
-    recording_url = recording.get("url") or recording.get("recordingUrl")
+    # Recording URL: in SDK 1.9.x it most often appears at message.call.recordingUrl, NOT in artifact
+    rec = artifact.get("recording")
+    recording_url = (
+        call.get("recordingUrl")
+        or artifact.get("recordingUrl")
+        or (rec.get("url") if isinstance(rec, dict) else None)
+    )
+    if not recording_url and isinstance(rec, str):
+        recording_url = rec
 
     # Structured turns from artifact.messages (if present)
     # Filter out system prompts - they shouldn't appear in conversation turns

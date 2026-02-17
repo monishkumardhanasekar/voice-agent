@@ -65,3 +65,48 @@ def load_transcript(path: os.PathLike[str] | str) -> Dict[str, Any]:
     with p.open("r", encoding="utf-8") as f:
         return json.load(f)
 
+
+def patch_transcript_scenario(
+    path: os.PathLike[str] | str,
+    scenario_id: str,
+    category: str,
+    name: str,
+    run_index: int,
+) -> None:
+    """
+    Patch an existing transcript JSON with scenario metadata.
+    Used by the Phase 4 runner after the webhook has saved the file.
+    """
+    p = Path(path)
+    if not p.exists():
+        return
+    with p.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    data["scenario"] = {
+        "id": scenario_id,
+        "category": category,
+        "name": name,
+        "run_index": run_index,
+    }
+    with p.open("w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def patch_transcript_recording_url(path: os.PathLike[str] | str, recording_url: str) -> None:
+    """Set artifact.recording_url in an existing transcript JSON file."""
+    p = Path(path)
+    if not p.exists() or not recording_url:
+        return
+    with p.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    artifact = data.get("artifact")
+    if artifact is None:
+        data["artifact"] = {"raw_transcript": None, "recording_url": recording_url}
+    else:
+        if not isinstance(artifact, dict):
+            data["artifact"] = {"raw_transcript": None, "recording_url": recording_url}
+        else:
+            artifact["recording_url"] = recording_url
+    with p.open("w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+

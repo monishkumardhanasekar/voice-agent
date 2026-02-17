@@ -7,6 +7,8 @@ persist transcripts.
 """
 
 import os
+from datetime import datetime, timezone
+from typing import Optional
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
@@ -19,42 +21,55 @@ load_dotenv()
 app = Flask(__name__)
 
 
+def _log_webhook_event(event_type: str, call_id: Optional[str], extra: str = "") -> None:
+    """Log every webhook with server time so we can see order and when events arrive."""
+    now = datetime.now(timezone.utc).isoformat()
+    call_part = f" call_id={call_id}" if call_id else ""
+    msg = f"[webhook] {now} type={event_type}{call_part}"
+    if extra:
+        msg += f" {extra}"
+    print(msg)
+
+
 @app.post("/webhook/vapi")
 def vapi_webhook() -> tuple[dict, int]:
     """
     Receive Vapi server events.
 
-    - Logs the event type.
+    - Logs every event with UTC timestamp and event type (and call_id when present).
     - When the event is an end-of-call report, normalizes the transcript and
-      writes it to `transcripts/` using `storage.save_transcript`.
+      writes it to `transcripts/` using `storage.save_transcript`, and adds
+      webhook_received_at (server time) to the saved JSON.
     - Always returns 200 quickly so we don't impact telephony timing.
     """
     try:
         payload = request.get_json(force=True, silent=False) or {}
     except Exception:
-        # If payload is not JSON, still return 200 so we don't break calls,
-        # but surface a minimal error in the body.
         print("[webhook] Received invalid JSON payload")
         return {"status": "error", "reason": "invalid_json"}, 200
 
     message = payload.get("message") or {}
     event_type = message.get("type", "unknown")
+    call = message.get("call") or {}
+    call_id = call.get("id")
 
-    # Lightweight log to stdout so you can see events arriving while testing.
-    print(f"[webhook] Received event type={event_type}")
+    _log_webhook_event(event_type, call_id)
 
-    # If this is an end-of-call report, normalize and save the transcript.
+    # Only save transcript for end-of-call-report (sent by Vapi after call ends).
     try:
         transcript = extract_transcript_from_webhook(payload)
         if transcript is not None:
+            # Record when we received this webhook (server time) for debugging timing.
+            transcript["webhook_received_at"] = datetime.now(timezone.utc).isoformat()
             path = save_transcript(transcript)
-            print(f"[webhook] Saved transcript for call_id={transcript.get('call_id')} at {path}")
+            _log_webhook_event(
+                event_type,
+                transcript.get("call_id"),
+                extra=f"SAVED -> {path}",
+            )
     except Exception as e:
-        # Do not break the webhook response on errors; just log them.
         print(f"[webhook] Error while processing transcript: {e}")
 
-    # Always respond 200 quickly; Vapi does not expect a complex response
-    # for status / transcript / end-of-call-report events.
     return {"status": "ok"}, 200
 
 
