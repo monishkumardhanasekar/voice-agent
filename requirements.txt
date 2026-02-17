@@ -1,0 +1,14 @@
+# Voice patient testing bot — dependencies
+# Install: pip install -r requirements.txt
+
+# Vapi: official server SDK for create-call API
+vapi-server-sdk==1.9.0
+
+# Webhook server
+flask>=3.0.0
+
+# LLM for evaluation
+openai>=1.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
