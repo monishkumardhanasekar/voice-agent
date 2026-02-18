@@ -21,6 +21,7 @@ Automated patient voice bot that calls Pretty Good AI’s clinic test line, runs
 |----------|-------------|
 | `VAPI_API_KEY` | API key from [Vapi Dashboard](https://dashboard.vapi.ai) |
 | `VAPI_PHONE_NUMBER_ID` | ID of the Vapi number used to place outbound calls |
+| `VAPI_DESTINATION_NUMBER` | E.164 number to call (destination / clinic test line, e.g. `+18054398008`) |
 | `WEBHOOK_BASE_URL` | Public URL for webhooks (e.g. ngrok URL when testing locally); this is what you set as the Vapi Server URL, e.g. `https://<ngrok-subdomain>.ngrok.io/webhook/vapi` |
 | `OPENAI_API_KEY` | OpenAI API key for the evaluation step |
 | `WEBHOOK_HOST` (optional) | Host for local webhook server (default `0.0.0.0`) |
@@ -34,7 +35,7 @@ Automated patient voice bot that calls Pretty Good AI’s clinic test line, runs
 python vapi_client.py
 ```
 
-Requires `VAPI_API_KEY` and `VAPI_PHONE_NUMBER_ID` in `.env`. Dials the test line (805-439-8008) with a minimal patient assistant.
+Requires `VAPI_API_KEY`, `VAPI_PHONE_NUMBER_ID`, and `VAPI_DESTINATION_NUMBER` in `.env`. Dials the number in `VAPI_DESTINATION_NUMBER` with a minimal patient assistant.
 
 **Webhook server (Phase 3):**
 
@@ -166,6 +167,14 @@ python main.py --mode task --scenario <CATEGORY> --variant <N> [--runs <N>]
 - **Required:** `--scenario` (category), `--variant` (0, 1, or 2).
 - **Optional:** `--runs` = how many times to run that (category, variant). Default: **2**.
 
+**One test call (office_info variant 0 — hours, address, parking):**
+
+```bash
+python main.py --mode task --scenario office_info --variant 0 --runs 1
+```
+
+Before running: start the webhook server and ngrok so the transcript is captured. After the call ends, the runner saves the transcript and runs the evaluator; the report is written to `reports/<call_id>.json`.
+
 Examples:
 
 ```bash
@@ -233,6 +242,40 @@ Each transcript is saved as `transcripts/<call_id>.json` with:
 - `artifact.raw_transcript`: full text transcript; `artifact.recording_url`: **public recording URL when provided by Vapi**
 
 **Recording URL:** We extract it from the webhook when present (`artifact.recording` as string or object, or `artifact.recordingUrl`). When you run the Phase 4 runner (`main.py`), if the saved transcript still has no recording URL, the runner fetches the call via the Vapi API (GET /call/{id}) and patches the transcript with `artifact.recording` from the response, so you get the public recording URL when Vapi has it available.
+
+## Evaluation (Phase 5)
+
+Phase 5 is implemented: every completed call gets an evaluation report automatically; you can also test the evaluator on existing transcripts (see below).
+
+After each transcript is saved and patched (scenario + recording URL), the runner runs the **evaluator** once per call. The evaluator sends the transcript and scenario (goal, eval_hints) to an LLM (OpenAI GPT-4o) and gets back a structured JSON report with 8 dimension scores, eval-hint verdicts, issues (with type, severity, optional turn number and quote), and a summary. Reports are saved under `reports/<call_id>.json`.
+
+- **Requires:** `OPENAI_API_KEY` in `.env`. If unset, evaluation is skipped with a warning.
+- **Evaluation plan:** See `EVALUATION_PLAN.md` for dimensions, rubric, and output schema.
+
+**Test evaluation integration** (no real call — run evaluator on one existing transcript to verify the flow). Requires the same environment as `main.py` (venv activated, `OPENAI_API_KEY` in `.env`):
+
+```bash
+python test_eval_integration.py
+# Or on a specific transcript:
+python test_eval_integration.py transcripts/019c6e74-ebfe-766e-9d1f-7bcef1d67617.json
+```
+
+**Re-run evaluation on existing transcripts** (e.g. after changing the eval prompt):
+
+```bash
+python -c "
+from pathlib import Path
+from evaluator import evaluate_transcript_file
+from storage import save_evaluation_report
+
+for path in Path('transcripts').glob('*.json'):
+    report = evaluate_transcript_file(str(path))
+    if report:
+        cid = report.get('call_id') or path.stem
+        save_evaluation_report(cid, report)
+        print('Saved', cid)
+"
+```
 
 ## Project structure
 

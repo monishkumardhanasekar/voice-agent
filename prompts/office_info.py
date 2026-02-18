@@ -38,7 +38,7 @@ End the call with:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I was just calling to get your office hours and where exactly
+- Say: "I was just calling to get your office hours and where exactly
   you're located."
 
 During the call:
@@ -86,7 +86,7 @@ You are specifically watching for:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I just wanted to check if you take Blue Cross Blue Shield PPO,
+- Say: "I just wanted to check if you take Blue Cross Blue Shield PPO,
   and what I might expect for a copay."
 
 During the call:
@@ -134,7 +134,7 @@ You are watching out for:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I was wondering which doctors you have there and what they
+- Say: "I was wondering which doctors you have there and what they
   specialize in. I'm trying to figure out who I should see."
 
 During the call:

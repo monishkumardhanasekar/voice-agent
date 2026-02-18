@@ -7,12 +7,14 @@ Scheduling scenarios: patient calls to book a new appointment.
   2 — Vague day reference (“this Thursday” / “next Friday”) with dynamic dates
 """
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
+from typing import Optional
 
+from datetime_context import get_patient_now
 from scenario_manager import ScenarioConfig, register_scenarios
 
 
-def _compute_relative_dates() -> tuple[str, str, str]:
+def _compute_relative_dates(reference: Optional[datetime] = None) -> tuple[str, str, str]:
     """
     Compute today's date, the next “this Thursday”, and the following
     “next Friday” as human-readable strings based on the local system date.
@@ -21,7 +23,10 @@ def _compute_relative_dates() -> tuple[str, str, str]:
     which calendar days she is referring to. She should still SAY
     “this Thursday” / “next Friday” on the call, not the exact dates.
     """
-    today = datetime.now()
+    now = reference if reference is not None else get_patient_now()
+    today = now.date() if hasattr(now, "date") else now
+    if isinstance(today, datetime):
+        today = today.date()
     weekday = today.weekday()  # Monday=0 … Sunday=6
 
     # “This Thursday” = the next occurrence of Thursday (3), including today
@@ -39,8 +44,6 @@ def _compute_relative_dates() -> tuple[str, str, str]:
     next_fri_str = next_fri.strftime(fmt)
     return today_str, this_thu_str, next_fri_str
 
-
-_TODAY_STR, _THIS_THURSDAY_STR, _NEXT_FRIDAY_STR = _compute_relative_dates()
 
 # ---------------------------------------------------------------------------
 # Variant 0: Standard knee pain appointment
@@ -71,7 +74,7 @@ Do not hang up until you have all three, or it is clear they cannot help.
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say something like "Hi, I'd like to schedule an appointment for knee pain."
+- Say something like " I'd like to schedule an appointment for knee pain."
 
 During the call:
 - When asked about the pain, describe it naturally: "It's my right knee,
@@ -127,7 +130,7 @@ See if the agent:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say something like: "Hi, I was told I need to see a specialist and
+- Say something like: " I was told I need to see a specialist and
   I want to schedule that appointment."
 
 During the call (pick one of these ways to describe the issue):
@@ -161,13 +164,16 @@ Before ending:
 # current date. We compute the real calendar dates at runtime so Sarah
 # knows which days she means when she says those phrases.
 # ---------------------------------------------------------------------------
-_VARIANT_2_PROMPT = f"""
+def _build_variant_2_prompt() -> str:
+    """Build variant 2 prompt with dates computed at runtime (patient timezone)."""
+    today_str, this_thu_str, next_fri_str = _compute_relative_dates()
+    return f"""
 # CONTEXT
 For your reference (do NOT read this aloud on the call):
-- Today is {_TODAY_STR}.
-- When you say "this Thursday", you mean {_THIS_THURSDAY_STR} in your
+- Today is {today_str}.
+- When you say "this Thursday", you mean {this_thu_str} in your
   local time.
-- When you say "next Friday", you mean {_NEXT_FRIDAY_STR}.
+- When you say "next Friday", you mean {next_fri_str}.
 
 You should still SAY "this Thursday" / "next Friday" on the call, not
 the exact calendar dates above. The dates are here so you can double-check
@@ -191,21 +197,21 @@ since your last physical and you want to stay on top of things.
 Get a confirmed appointment on the correct day. Pay close attention to
 whether the agent books you on the right day when you say "this Thursday"
 or "next Friday." If the agent suggests a different day than what you said,
-ask: "Wait, I said this Thursday — is that on {_THIS_THURSDAY_STR}?\" or
-\"I said next Friday — is that on {_NEXT_FRIDAY_STR}?\".
+ask: "Wait, I said this Thursday — is that on {this_thu_str}?" or
+"I said next Friday — is that on {next_fri_str}?".
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I'd like to schedule a check-up."
+- Say: " I'd like to schedule a check-up."
 
 During the call:
 - When asked about timing, say: "Can I come in this Thursday?"
 - If they offer a time on Thursday, confirm the exact date: "Just to make
   sure, that's this Thursday, right?" If they mention a date that does NOT
-  match {_THIS_THURSDAY_STR}, question it.
+  match {this_thu_str}, question it.
 - If Thursday is not available, say: "Okay, how about next Friday then?"
   and again verify the exact date they give you. If it does not match
-  {_NEXT_FRIDAY_STR}, question it.
+  {next_fri_str}, question it.
 - If the agent says a date that does not match the day you requested,
   push back: "Hmm, that doesn't sound right. I said this Thursday, not
   next Thursday," or similar.
@@ -271,7 +277,8 @@ SCHEDULING_SCENARIOS = [
             "If the agent got the day wrong, did the patient catch it?",
             "Was the final confirmed date consistent with what was discussed?",
         ],
-        prompt_block=_VARIANT_2_PROMPT,
+        prompt_block="",  # built at runtime by prompt_block_builder (dynamic dates)
+        prompt_block_builder=_build_variant_2_prompt,
         first_message="Hello.",
     ),
 ]

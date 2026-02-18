@@ -4,6 +4,8 @@ Scenario manager: loads scenarios, composes prompts, and provides metadata.
 Each scenario is a Python module in prompts/ that exports a list of
 ScenarioConfig dicts. The manager combines the stable base persona with
 a scenario-specific prompt block to produce the final system prompt.
+Current date/time (in patient timezone) is injected so the bot knows "today"
+and "now" for relative references like "this Thursday".
 
 Usage:
     from scenario_manager import get_scenario, list_scenarios, build_prompt
@@ -13,8 +15,9 @@ Usage:
 """
 
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Callable, Optional
 
+from datetime_context import get_datetime_context_string
 from prompts.base_prompt import BASE_PROMPT
 
 
@@ -35,6 +38,8 @@ class ScenarioConfig:
     # Prompt
     prompt_block: str = ""          # scenario-specific text injected after base
     first_message: str = "Hello."   # what the patient says first
+    # If set, called at build_prompt time to get prompt_block (for dynamic dates etc.)
+    prompt_block_builder: Optional[Callable[[], str]] = field(default=None, hash=False)
 
 
 # ---------------------------------------------------------------------------
@@ -75,6 +80,15 @@ def list_scenarios(category: Optional[str] = None) -> list[ScenarioConfig]:
     return [s for group in _REGISTRY.values() for s in group]
 
 
+def get_scenario_by_id(scenario_id: str) -> Optional[ScenarioConfig]:
+    """Return the scenario config with the given id, or None if not found."""
+    _ensure_loaded()
+    for sc in list_scenarios():
+        if sc.id == scenario_id:
+            return sc
+    return None
+
+
 def get_scenario(category: str, variant: int = 0) -> ScenarioConfig:
     """
     Get a specific scenario by category and variant index.
@@ -98,9 +112,20 @@ def get_scenario(category: str, variant: int = 0) -> ScenarioConfig:
 
 def build_prompt(scenario: ScenarioConfig) -> str:
     """
-    Compose the full system prompt: base persona + scenario block.
+    Compose the full system prompt: base persona + current date/time + scenario block.
 
     The base prompt ends with "# SCENARIO INSTRUCTIONS" header.
-    The scenario's prompt_block is appended after it.
+    Then we inject current date and time (patient timezone, from env PATIENT_TIMEZONE).
+    The scenario's prompt_block (or prompt_block_builder() if set) is appended last.
     """
-    return f"{BASE_PROMPT}\n\n{scenario.prompt_block}"
+    block = (
+        scenario.prompt_block_builder()
+        if scenario.prompt_block_builder is not None
+        else scenario.prompt_block
+    )
+    datetime_context = get_datetime_context_string()
+    return (
+        f"{BASE_PROMPT}\n\n"
+        f"# CURRENT DATE & TIME\n{datetime_context}\n\n"
+        f"{block}"
+    )

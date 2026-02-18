@@ -14,8 +14,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Default destination: Pretty Good AI test line
-DEFAULT_DESTINATION_NUMBER = "+18054398008"
+# Env key for outbound call destination (E.164). No default — must be set in .env.
+DESTINATION_NUMBER_ENV = "VAPI_DESTINATION_NUMBER"
 
 
 def _get_config() -> tuple[str, str]:
@@ -29,10 +29,21 @@ def _get_config() -> tuple[str, str]:
     return api_key, phone_number_id
 
 
+def _get_destination_number() -> str:
+    """Destination for outbound calls (E.164). From env VAPI_DESTINATION_NUMBER."""
+    dest = os.getenv(DESTINATION_NUMBER_ENV)
+    if not dest or not dest.strip():
+        raise ValueError(
+            f"{DESTINATION_NUMBER_ENV} is not set. Add it to .env."
+        )
+    return dest.strip()
+
+
 def _build_assistant(
     system_prompt: str,
     first_message: str = "Hello.",
-    first_message_mode: str = "assistant-speaks-first",
+    # first_message_mode: str = "assistant-speaks-first",
+    first_message_mode: str = "assistant-waits-for-user",
     webhook_url: Optional[str] = None,
 ) -> dict:
     """
@@ -56,7 +67,7 @@ def _build_assistant(
         "inputMinCharacters": 30,
         "stability": 0.7,
         "similarityBoost": 0.75,
-        "speed": 0.9,
+        "speed": 0.8,
         "style": 0,
         "useSpeakerBoost": False,
         "autoMode": False,
@@ -67,18 +78,39 @@ def _build_assistant(
         "provider": "deepgram",
         "model": "nova-2",
         "language": "en",
-        "confidenceThreshold": 0.5,
+        "confidenceThreshold": 0.65,
         "numerals": False,
     }
 
-    # StartSpeakingPlan: only waitSeconds (API rejects onPunctuationSeconds, smartEndpointing, etc.)
-    start_speaking_plan = {"waitSeconds": 3}
+    # StartSpeakingPlan: Smart endpointing for English (LiveKit) + waitSeconds
+    # LiveKit detects when clinic agent has truly finished speaking (handles mid-thought pauses)
+    start_speaking_plan = {
+        "smartEndpointingPlan": {
+            "provider": "livekit",
+            "waitFunction": "2000 / (1 + exp(-10 * (x - 0.5)))",  # Aggressive (fast response)
+        },
+        "waitSeconds": 0.5,  # Final delay before speaking (recommended default)
+    }
 
-    # StopSpeakingPlan: API expects numWords (not numberOfWords)
+    # StopSpeakingPlan: VAD-based interruption + acknowledgement phrases
+    # numWords: 0 = Voice Activity Detection (fast, language-independent)
+    # acknowledgementPhrases: Ignore interruptions from these backchannel cues
     stop_speaking_plan = {
-        "numWords": 3,
-        "voiceSeconds": 0.4,
-        "backoffSeconds": 3,
+        "numWords": 2,  # VAD-based for fast interruption detection (was 7, too high)
+        "voiceSeconds": 0.4,  # Balanced sensitivity (was 0.5, too conservative)
+        "backoffSeconds": 1.0,  # Natural pause after interruption (was 2.5, too long)
+        "acknowledgementPhrases": [
+            "got it",
+            "okay",
+            "alright",
+            "right",
+            "uh-huh",
+            "yeah",
+            "mm-hmm",
+            "sure",
+            "yes",
+            "understood",
+        ],
     }
 
     # VoicemailDetection: only provider and backoffPlan (no initialDelaySeconds)
@@ -132,7 +164,7 @@ def start_call(
     Start an outbound phone call from our patient assistant to the given number.
 
     Args:
-        destination_number: E.164 number to call (default: 805-439-8008).
+        destination_number: E.164 number to call (default: from env VAPI_DESTINATION_NUMBER).
         system_prompt: Full system prompt. If None, uses scenario_manager
                        to build the default (scheduling variant 0).
         first_message: First utterance (default: from scenario or "Hello.").
@@ -143,12 +175,12 @@ def start_call(
         Call object from Vapi (includes id, status, etc.).
 
     Raises:
-        ValueError: If VAPI_API_KEY or VAPI_PHONE_NUMBER_ID is missing.
+        ValueError: If VAPI_API_KEY, VAPI_PHONE_NUMBER_ID, or VAPI_DESTINATION_NUMBER is missing.
     """
     from vapi import Vapi
 
     api_key, phone_number_id = _get_config()
-    dest = destination_number or DEFAULT_DESTINATION_NUMBER
+    dest = destination_number or _get_destination_number()
 
     # Build prompt from scenario_manager if not explicitly provided
     if system_prompt is not None:

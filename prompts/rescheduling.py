@@ -46,7 +46,7 @@ clear confirmation that:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I already have an appointment scheduled, but I need to move it
+- Say: "I already have an appointment scheduled, but I need to move it
   to a different day."
 
 During the call:
@@ -95,9 +95,9 @@ see how the agent handles it.
    - "I'd like to change it to Thursday if possible."
 
 2) After the agent starts working with that day (looking for times,
-   proposing a slot), you suddenly change your mind to another day BEFORE
+   proposing a slot), you suddenly change your mind to another day with specifying which week, this week or next week BEFORE
    everything is finalized, for example:
-   - "Actually, can we do Friday instead?"
+   - "Actually, can we do this week Friday instead?"
 
 # YOUR GOAL
 Check whether the agent:
@@ -107,7 +107,7 @@ Check whether the agent:
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I have an appointment scheduled next week and I need to change
+- Say: "I have an appointment scheduled next week and I need to change
   the day."
 
 During the call:
@@ -155,7 +155,7 @@ contradicts itself, or leaves you in doubt.
 
 # HOW TO HANDLE THIS CALL
 Opening:
-- Say: "Hi, I need to cancel my upcoming appointment."
+- Say: "I need to cancel my upcoming appointment."
 
 During the call:
 - When they ask which one, say: "It's my knee appointment next week" (or

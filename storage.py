@@ -16,6 +16,7 @@ from typing import Any, Dict
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 TRANSCRIPTS_DIR = PROJECT_ROOT / "transcripts"
+REPORTS_DIR = PROJECT_ROOT / "reports"
 
 
 def _ensure_transcripts_dir() -> None:
@@ -90,6 +91,30 @@ def patch_transcript_scenario(
     }
     with p.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def _ensure_reports_dir() -> None:
+    """Make sure the reports directory exists."""
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def save_evaluation_report(call_id: str, report: Dict[str, Any]) -> Path:
+    """
+    Save an evaluation report dict to `reports/<call_id>.json`.
+    Returns the full Path to the written file.
+    """
+    _ensure_reports_dir()
+    path = REPORTS_DIR / f"{call_id}.json"
+    with path.open("w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    return path
+
+
+def load_evaluation_report(path: os.PathLike[str] | str) -> Dict[str, Any]:
+    """Load an evaluation report JSON into a dict."""
+    p = Path(path)
+    with p.open("r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def patch_transcript_recording_url(path: os.PathLike[str] | str, recording_url: str) -> None:

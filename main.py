@@ -25,11 +25,14 @@ from scenario_manager import (
     list_scenarios,
 )
 from storage import (
+    REPORTS_DIR,
     TRANSCRIPTS_DIR,
     load_transcript,
     patch_transcript_recording_url,
     patch_transcript_scenario,
+    save_evaluation_report,
 )
+from evaluator import evaluate_transcript_file
 from vapi_client import get_recording_url, start_call
 
 # Defaults
@@ -177,6 +180,14 @@ def run_one(
                 print(f"  recording_url set from API")
     except Exception as e:
         print(f"  WARN: could not fetch recording URL: {e}")
+    # Run evaluation (LLM judge) and save report to reports/<call_id>.json
+    try:
+        report = evaluate_transcript_file(str(path))
+        if report and call_id:
+            save_evaluation_report(call_id, report)
+            print(f"  evaluation saved: {REPORTS_DIR / f'{call_id}.json'}")
+    except Exception as e:
+        print(f"  WARN: could not run evaluation: {e}")
     return True, call_id, path
 
 
