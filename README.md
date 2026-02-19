@@ -219,6 +219,24 @@ Transcripts are written when the webhook receives Vapi’s `end-of-call-report`.
 
 ---
 
+## Iteration and tuning
+
+This wasn't a one-shot build. The bot, prompts, and evaluation were shaped through multiple rounds of testing.
+
+**Manual exploration first.** Before writing any code, I made multiple manual calls to the clinic bot to understand how it works — its flow, what it asks for, how it handles edge cases. I deliberately tried to confuse it, asked unexpected questions, and pushed it to find its limits. That hands-on understanding made it much easier to write targeted scenario prompts that test specific behaviors rather than guessing.
+
+**Prompt iteration.** Every scenario prompt went through multiple iterations based on observed behavior. For example, early versions of the scheduling prompt didn't handle "this Thursday" vs "next Thursday" well, so I refined the prompt and added date/time injection. Turn-taking rules were added to the base prompt after observing the patient bot interrupting the clinic agent in early calls.
+
+**Turn-taking parameter tuning.** The Vapi assistant's `stopSpeakingPlan` was tuned over several test calls. `numWords` started at 7 (too high — the bot waited too long to detect interruptions), `voiceSeconds` at 0.5 (too conservative), and `backoffSeconds` at 2.5 (too long a pause after being interrupted). These were adjusted to 2, 0.4, and 1.0 respectively until conversations flowed naturally.
+
+**First message mode.** Started with `assistant-speaks-first` but switched to `assistant-waits-for-user` because the clinic agent expects to greet the caller first — our bot speaking first caused awkward overlaps.
+
+**Evaluator rubric refinement.** Initial LLM evaluations were too lenient — scores clustered at 7–9 even for calls with clear issues. The rubric was tightened with explicit instructions to use the full 0–10 scale and stricter per-dimension criteria (e.g. "do not default to 7–9; use 4–6 when the bot clearly failed on multiple criteria").
+
+**Repeated scenario runs.** Scenarios were run multiple times to distinguish consistent bugs from one-offs. For example, the multiple-appointments scenario was tested 4 times — the incomplete confirmation bug appeared in 2 out of 4 runs, confirming it as a real intermittent issue rather than a fluke.
+
+---
+
 ## Documentation
 
 | Document | Purpose |
