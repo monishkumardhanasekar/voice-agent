@@ -1,297 +1,230 @@
 # Voice Patient Testing Bot
 
-Automated patient voice bot that calls Pretty Good AI’s clinic test line, runs scenarios, records transcripts, and produces bug reports. Built with Vapi and Python.
+An automated **patient** voice bot that calls Pretty Good AI's clinic test line, runs different scenarios (scheduling, refills, cancellations, office info), records conversations, and produces transcripts and evaluation reports. Built with **Vapi** (voice/telephony) and **Python**.
+
+---
+
+## Prerequisites
+
+- **Python 3.10+**
+- **Vapi account** — [dashboard.vapi.ai](https://dashboard.vapi.ai) (API key + a phone number to call *from*)
+- **OpenAI API key** — for the evaluation step (LLM-as-judge)
+- **ngrok** (or similar) — for local development, so Vapi can send webhooks to your machine
+
+---
 
 ## Setup
 
-1. Clone the repo and create a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate   # Windows: .venv\Scripts\activate
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Copy `.env.example` to `.env` and set all required environment variables (see below). **Do not commit `.env` or any secrets.**
+### 1. Clone and install
 
-### Required environment variables
+```bash
+git clone <repo-url>
+cd voice-agent
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-| Variable | Description |
-|----------|-------------|
-| `VAPI_API_KEY` | API key from [Vapi Dashboard](https://dashboard.vapi.ai) |
-| `VAPI_PHONE_NUMBER_ID` | ID of the Vapi number used to place outbound calls |
-| `VAPI_DESTINATION_NUMBER` | E.164 number to call (destination / clinic test line, e.g. `+18054398008`) |
-| `WEBHOOK_BASE_URL` | Public URL for webhooks (e.g. ngrok URL when testing locally); this is what you set as the Vapi Server URL, e.g. `https://<ngrok-subdomain>.ngrok.io/webhook/vapi` |
-| `OPENAI_API_KEY` | OpenAI API key for the evaluation step |
-| `WEBHOOK_HOST` (optional) | Host for local webhook server (default `0.0.0.0`) |
-| `WEBHOOK_PORT` (optional) | Port for local webhook server (default `8765`) |
+### 2. Environment variables
 
-## How to run
+Copy the example env file and fill in your values:
 
-**Test one outbound call (Phase 1):**
+```bash
+cp .env.example .env
+```
+
+Edit `.env`. **Do not commit `.env` or any secrets.**
+
+| Variable | Required | Description |
+|--------|----------|-------------|
+| `VAPI_API_KEY` | Yes | API key from [Vapi Dashboard](https://dashboard.vapi.ai) |
+| `VAPI_PHONE_NUMBER_ID` | Yes | ID of the Vapi phone number you use to place outbound calls (Dashboard → Phone Numbers) |
+| `VAPI_DESTINATION_NUMBER` | Yes | E.164 number to call (the clinic test line, e.g. `+18054398008`) |
+| `WEBHOOK_BASE_URL` | Yes for transcripts | Base URL of your webhook server. For local dev with ngrok: `https://YOUR-NGROK-SUBDOMAIN.ngrok.io` — **do not** add `/webhook/vapi`; the code adds it. |
+| `OPENAI_API_KEY` | Yes for evaluation | OpenAI API key (evaluation step scores each call) |
+| `WEBHOOK_HOST` | No | Host for webhook server (default `0.0.0.0`) |
+| `WEBHOOK_PORT` | No | Port for webhook server (default `8765`) |
+
+---
+
+## Quick test: one call (no transcript) 
+Note: This will run only the VAPI not the entire wokflow - use it for testing VAPI in local
+
+To verify that Vapi and your keys work, place a single outbound call. No webhook or ngrok needed.
 
 ```bash
 python vapi_client.py
 ```
 
-Requires `VAPI_API_KEY`, `VAPI_PHONE_NUMBER_ID`, and `VAPI_DESTINATION_NUMBER` in `.env`. Dials the number in `VAPI_DESTINATION_NUMBER` with a minimal patient assistant.
-
-**Webhook server (Phase 3):**
-
-1. Start the local webhook server:
-   ```bash
-   python webhook_server.py
-   ```
-2. In a separate terminal, start ngrok (or similar) to expose the port.
-
-### Ngrok setup (for webhooks)
-
-These steps assume macOS; adjust if you use a different OS.
-
-1. **Install ngrok** (one-time):
-   - Using Homebrew:
-     ```bash
-     brew install ngrok/ngrok/ngrok
-     ```
-   - Or download from `https://ngrok.com/download` and follow their instructions.
-
-2. **Connect your ngrok account** (one-time):
-   - Create a free account at `https://ngrok.com/`.
-   - From the ngrok dashboard, copy your **authtoken**.
-   - Run:
-     ```bash
-     ngrok config add-authtoken <YOUR_AUTHTOKEN>
-     ```
-
-3. **Expose the webhook server:**
-   - With `webhook_server.py` running locally on port `8765`, run:
-     ```bash
-     ngrok http 8765
-     ```
-   - Ngrok will print an HTTPS URL like:
-     ```text
-     https://abcd1234.ngrok.io
-     ```
-
-4. **Configure Vapi Server URL:**
-   - In the Vapi dashboard, set the **Server URL** (or equivalent setting) to:
-     ```text
-     https://abcd1234.ngrok.io/webhook/vapi
-     ```
-   - Optionally, also set `WEBHOOK_BASE_URL` in your `.env` to the same value:
-     ```env
-     WEBHOOK_BASE_URL=https://abcd1234.ngrok.io
-     ```
-
-5. **Test the webhook:**
-   - Make a test call (e.g. using `vapi_client.py` with any scenario).
-   - In the terminal where `webhook_server.py` is running, you should see lines like:
-     ```text
-     [webhook] Received event type=end-of-call-report
-     ```
+This dials `VAPI_DESTINATION_NUMBER` with a minimal patient assistant. You should see a call object printed and the call connect. Transcripts are **not** saved unless the webhook is running (see below).
 
 ---
 
-## Scenarios
+## Full workflow: transcripts and evaluation
 
-Scenarios define **what the patient (our bot) is trying to do** on each call. Each scenario has a **category** and a **variant** (prompt number). The runner uses these to build the system prompt and first message.
+To run scenarios and get **transcripts** and **evaluation reports**, Vapi must be able to send events to your machine. Use a webhook server and ngrok.
 
-### Scenario categories
+### Step 1: Start the webhook server
 
-| Category       | Description |
-|----------------|-------------|
-| `scheduling`   | New appointment: knee pain, specialist routing, vague day references |
-| `rescheduling` | Change or cancel existing appointment |
-| `refill`       | Medication refill (routine, with dosage question, or needing doctor approval) |
-| `office_info`  | Office hours, location, parking; insurance/billing; doctors and specialties |
-| `edge_cases`   | Off-topic conversation; confusing requests; multiple appointments in one call |
-
-Each category has **three variants** (0, 1, 2). For example, `scheduling` variant 0 is “Standard knee pain appointment”, variant 1 is “Force specialist routing”, variant 2 is “Vague day reference (‘this Thursday’ / ‘next Friday’)”.
-
-### How scenarios are used
-
-- **Category** = which prompt family (e.g. `office_info`).
-- **Variant** = which prompt inside that family (0, 1, or 2).
-- When you run the runner, it builds a list of **(category, variant)** pairs (and optionally repeats the same pair N times). Each pair becomes one outbound call with that scenario’s prompt.
-
----
-
-## Phase 4 — Running scenarios sequentially
-
-Phase 4 runs multiple scenario calls **one after another**: start call → wait for transcript (up to 16 minutes) → optional delay → next call. No overlapping calls.
-
-**Before you run:** Start the webhook server (`python webhook_server.py`) and ngrok (`ngrok http 8765`), and set `WEBHOOK_BASE_URL` in `.env` to your ngrok URL. The runner uses the same webhook to receive transcripts.
-
-### Three run modes
-
-| Mode        | What it does | When to use |
-|-------------|--------------|-------------|
-| **all**     | Runs **every** (category, variant) once. 5 categories × 3 variants = **15 calls** in a fixed order. | Full test suite in one go. |
-| **scenario**| Runs **all variants** of **one category** once. You choose the category (e.g. `office_info` → 3 calls). | Test one category only. |
-| **task**    | Runs **one** (category, variant) **N times** (e.g. 2 runs). You choose category, variant, and `--runs N`. | Repeat the same prompt for consistency. |
-
-### Command reference
-
-**1. Run all tasks (15 calls: every category, every variant, once each)**
+In a terminal (leave it running):
 
 ```bash
-python main.py --mode all
+python webhook_server.py
 ```
 
-No other args needed. Order: scheduling 0,1,2 → rescheduling 0,1,2 → refill 0,1,2 → office_info 0,1,2 → edge_cases 0,1,2.
+Server runs on `http://0.0.0.0:8765` by default. When a call ends, Vapi will POST the transcript here.
 
-**2. Run one scenario — all variants of a single category**
+### Step 2: Expose the server with ngrok
+
+In a **second** terminal:
 
 ```bash
-python main.py --mode scenario --scenario <CATEGORY>
+ngrok http 8765
 ```
 
-- **Required:** `--scenario` = one of: `scheduling`, `rescheduling`, `refill`, `office_info`, `edge_cases`.
-- **Effect:** 3 calls (variant 0, 1, 2 for that category).
+ngrok will print an HTTPS URL, e.g. `https://abc123.ngrok.io`.
 
-Examples:
+**One-time ngrok setup** (if you haven’t already): install ngrok, create an account at [ngrok.com](https://ngrok.com), then run `ngrok config add-authtoken <YOUR_TOKEN>`.
 
-```bash
-python main.py --mode scenario --scenario scheduling
-python main.py --mode scenario --scenario office_info
-python main.py --mode scenario --scenario edge_cases
+### Step 3: Update `.env` with your ngrok URL
+
+Copy the HTTPS URL ngrok printed (e.g. `https://abc123.ngrok.io`) into your `.env`:
+
+```env
+WEBHOOK_BASE_URL=https://YOUR-NGROK-SUBDOMAIN.ngrok.io
 ```
 
-**3. Run one task N times (same prompt, multiple calls)**
+Use only the base URL — **do not** add `/webhook/vapi`; the code adds it.  
+If your Vapi account uses a Server URL for webhooks, set it once in the Vapi dashboard to `https://YOUR-NGROK-SUBDOMAIN.ngrok.io/webhook/vapi` so call events are sent to this server.
+
+### Step 4: Run scenarios
+
+In a **third** terminal (with the same venv and `.env`):
 
 ```bash
-python main.py --mode task --scenario <CATEGORY> --variant <N> [--runs <N>]
-```
-
-- **Required:** `--scenario` (category), `--variant` (0, 1, or 2).
-- **Optional:** `--runs` = how many times to run that (category, variant). Default: **2**.
-
-**One test call (office_info variant 0 — hours, address, parking):**
-
-```bash
+# Run one quick test call (office_info, one run)
 python main.py --mode task --scenario office_info --variant 0 --runs 1
 ```
 
-Before running: start the webhook server and ngrok so the transcript is captured. After the call ends, the runner saves the transcript and runs the evaluator; the report is written to `reports/<call_id>.json`.
+When the call ends, Vapi sends the transcript to the webhook → the server writes `transcripts/<call_id>.json` → the runner runs the evaluator and writes `reports/<call_id>.json`.
 
-Examples:
+**Check:** In the webhook server terminal you should see something like `[webhook] ... type=end-of-call-report ... SAVED -> transcripts/...`.
 
-```bash
-# Run office_info variant 0 twice (default --runs 2)
-python main.py --mode task --scenario office_info --variant 0
+---
 
-# Run scheduling variant 1 three times
-python main.py --mode task --scenario scheduling --variant 1 --runs 3
+## Running scenarios (main commands)
 
-# Run refill variant 2 once
-python main.py --mode task --scenario refill --variant 2 --runs 1
-```
+The entrypoint is `main.py`. It runs calls **one after another**: start call → wait for transcript (up to 16 minutes) → save transcript → run evaluation → optional delay → next call.
 
-### All Phase 4 options
+**Tip:** Use `--dry-run` to see which scenarios will run without placing any calls: `python main.py --mode all --dry-run`
 
-| Option | Default | Meaning |
-|--------|---------|--------|
-| `--mode` | `all` | `all` \| `scenario` \| `task` |
-| `--scenario` | — | Category name (required for `scenario` and `task`) |
-| `--variant` | — | Variant index 0, 1, or 2 (required for `task`) |
-| `--runs` | `2` | Number of runs for `task` mode only |
-| `--dry-run` | off | Print the run list and **do not place any calls** |
-| `--delay` | `15` | Seconds to wait **between** calls (use `0` to disable) |
-| `--max-wait` | `16` | Max minutes to wait for the transcript file **per call** (hard limit) |
-| `--poll-interval` | `10` | Seconds between checks for the transcript file while waiting |
+### Modes
 
-**Examples with options:**
+| Mode | Command | What it does |
+|------|---------|--------------|
+| **all** | `python main.py --mode all` | Runs every (category, variant) once → **15 calls** in sequence. **Warning:** typically **30+ minutes** total — see below. |
+| **scenario** | `python main.py --mode scenario --scenario <CATEGORY>` | Runs all 3 variants of one category (3 calls). |
+| **task** | `python main.py --mode task --scenario <CATEGORY> --variant <0\|1\|2>` | Runs one (category, variant) one or more times. Default 2 runs; use `--runs 1` for a single call. |
+
+### What each command does (and warnings)
+
+- **`python main.py --mode all`** — Runs all 15 scenarios back-to-back. **Warning:** Each call can take several minutes (call duration + up to 16 min wait for transcript + 15 s delay). **Total runtime is typically 30+ minutes.** Keep the webhook server and ngrok running for the whole period.
+- **`python main.py --mode scenario --scenario <CATEGORY>`** — Runs the 3 variants of one category (3 calls). Use this to test one area without running the full suite.
+- **`python main.py --mode task --scenario <CATEGORY> --variant <0|1|2>`** — Runs a single scenario type once or more. Use `--runs 1` for one call. Best for a quick test.
+
+### Examples
 
 ```bash
-# See what would run without making calls
+# Full suite — 15 calls, 30+ minutes (see warning above)
+python main.py --mode all
+
+# One category only (3 calls)
+python main.py --mode scenario --scenario office_info
+
+# Single call — good first test of the full workflow
+python main.py --mode task --scenario office_info --variant 0 --runs 1
+
+# One scenario, three runs
+python main.py --mode task --scenario refill --variant 2 --runs 3
+
+# See what would run, no calls placed
 python main.py --mode all --dry-run
-python main.py --mode scenario --scenario office_info --dry-run
-python main.py --mode task --scenario scheduling --variant 0 --runs 2 --dry-run
-
-# Run all with 30 s between calls and 20 min max wait per transcript
-python main.py --mode all --delay 30 --max-wait 20
-
-# Run office_info scenario with no delay between the 3 calls
-python main.py --mode scenario --scenario office_info --delay 0
 ```
 
-**Help:**
+### Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--mode` | `all` | `all` \| `scenario` \| `task` |
+| `--scenario` | — | Category (required for `scenario` and `task`): `scheduling`, `rescheduling`, `refill`, `office_info`, `edge_cases` |
+| `--variant` | — | Variant 0, 1, or 2 (required for `task`) |
+| `--runs` | `2` | Number of runs in `task` mode |
+| `--dry-run` | off | Print run list and do not place calls |
+| `--delay` | `15` | Seconds between calls (use `0` to disable) |
+| `--max-wait` | `16` | Max minutes to wait for transcript file per call |
+| `--poll-interval` | `10` | Seconds between checks for transcript file |
 
 ```bash
 python main.py --help
 ```
 
-### What happens during a run
+---
 
-1. The runner builds the list of (scenario, run_index) from `--mode`, `--scenario`, `--variant`, and `--runs`.
-2. For each run it: gets the scenario prompt → starts an outbound call via Vapi → waits for `transcripts/<call_id>.json` to appear (polling every `--poll-interval` seconds, up to `--max-wait` minutes).
-3. When the file appears, it patches the transcript JSON with scenario metadata (category, id, name, run_index).
-4. If the file does not appear before the timeout, that run is counted as failed/timeout and the runner continues to the next.
-5. After each run (except the last), it waits `--delay` seconds before starting the next call.
-6. At the end it prints a summary: started, succeeded, failed/timeout, and the path to `transcripts/`.
+## Scenario categories
 
-**Note:** Transcripts are only written when the webhook receives Vapi’s `end-of-call-report` (after the call ends). So the runner waits for that file; if the call or webhook is slow, it may take several minutes per run.
+Scenarios define **what the patient (our bot) is trying to do** on each call. Each category has **3 variants** (0, 1, 2).
 
-### Saved transcript format
+| Category | Description |
+|----------|-------------|
+| `scheduling` | New appointment: knee pain, specialist routing, vague day (“this Thursday”) |
+| `rescheduling` | Change or cancel existing appointment |
+| `refill` | Medication refill (routine, dosage question, or needing doctor approval) |
+| `office_info` | Hours, location, parking; insurance; doctors and specialties |
+| `edge_cases` | Off-topic, confusing requests, multiple appointments in one call |
 
-Each transcript is saved as `transcripts/<call_id>.json` with:
+---
 
-- `call_id`, `ended_reason`, `started_at`, `ended_at`
-- `scenario`: after the runner patches it: `id`, `category`, `name`, `run_index`
-- `artifact.raw_transcript`: full text transcript; `artifact.recording_url`: **public recording URL when provided by Vapi**
+## Evaluation
 
-**Recording URL:** We extract it from the webhook when present (`artifact.recording` as string or object, or `artifact.recordingUrl`). When you run the Phase 4 runner (`main.py`), if the saved transcript still has no recording URL, the runner fetches the call via the Vapi API (GET /call/{id}) and patches the transcript with `artifact.recording` from the response, so you get the public recording URL when Vapi has it available.
-
-## Evaluation (Phase 5)
-
-Phase 5 is implemented: every completed call gets an evaluation report automatically; you can also test the evaluator on existing transcripts (see below).
-
-After each transcript is saved and patched (scenario + recording URL), the runner runs the **evaluator** once per call. The evaluator sends the transcript and scenario (goal, eval_hints) to an LLM (OpenAI GPT-4o) and gets back a structured JSON report with 8 dimension scores, eval-hint verdicts, issues (with type, severity, optional turn number and quote), and a summary. Reports are saved under `reports/<call_id>.json`.
+After each transcript is saved, the runner automatically runs the **evaluator**: it sends the transcript and scenario (goal, hints) to an LLM (OpenAI GPT-4o) and saves a structured report to `reports/<call_id>.json` (scores, issues, verdicts).
 
 - **Requires:** `OPENAI_API_KEY` in `.env`. If unset, evaluation is skipped with a warning.
-- **Evaluation plan:** See `EVALUATION_PLAN.md` for dimensions, rubric, and output schema.
+- **Using the reports:** The JSON in `reports/` is used for LLM evaluation tabulation and human evaluation; see **Documentation** below.
 
-**Test evaluation integration** (no real call — run evaluator on one existing transcript to verify the flow). Requires the same environment as `main.py` (venv activated, `OPENAI_API_KEY` in `.env`):
+---
 
-```bash
-python test_eval_integration.py
-# Or on a specific transcript:
-python test_eval_integration.py transcripts/019c6e74-ebfe-766e-9d1f-7bcef1d67617.json
-```
+## Output: transcripts and reports
 
-**Re-run evaluation on existing transcripts** (e.g. after changing the eval prompt):
+- **Transcripts:** `transcripts/<call_id>.json` — call id, timestamps, scenario (after runner patch), turns (patient vs clinic), raw transcript, recording URL (when available).
+- **Reports:** `reports/<call_id>.json` — evaluation output: dimension scores, issues, eval-hint verdicts.
 
-```bash
-python -c "
-from pathlib import Path
-from evaluator import evaluate_transcript_file
-from storage import save_evaluation_report
+Transcripts are written when the webhook receives Vapi’s `end-of-call-report`. If the webhook didn’t include a recording URL, the runner fetches it from the Vapi API and patches the transcript.
 
-for path in Path('transcripts').glob('*.json'):
-    report = evaluate_transcript_file(str(path))
-    if report:
-        cid = report.get('call_id') or path.stem
-        save_evaluation_report(cid, report)
-        print('Saved', cid)
-"
-```
+---
 
 ## Project structure
 
 | Path | Purpose |
 |------|---------|
-| `main.py` | Entrypoint; runs scenarios and coordinates calls + evaluation |
-| `vapi_client.py` | Vapi API client; starts outbound calls |
-| `webhook_handler.py` | Parses Vapi webhook payloads; extracts transcripts |
-| `scenario_manager.py` | Loads scenarios; builds base + scenario prompt |
-| `evaluator.py` | LLM-based evaluation; produces bug report JSON |
+| `main.py` | Entrypoint; runs scenarios, waits for transcripts, runs evaluator |
+| `vapi_client.py` | Vapi API client; starts outbound calls with transient assistant |
+| `webhook_server.py` | Flask server; receives Vapi webhooks, saves transcripts |
+| `webhook_handler.py` | Parses webhook payloads; normalizes to transcript structure |
+| `scenario_manager.py` | Loads scenarios; builds base prompt + scenario block + date/time |
+| `evaluator.py` | LLM-based evaluation; produces report JSON |
 | `storage.py` | Saves transcripts and reports to local JSON |
-| `prompts/` | Base persona + scenario prompt definitions (Python) |
-| `webhook_server.py` | Minimal Flask server exposing the `/webhook/vapi` endpoint |
+| `prompts/` | Base persona and scenario definitions (Python) |
 | `transcripts/` | Saved call transcripts (JSON) |
-| `reports/` | Evaluation / bug report JSON per call |
+| `reports/` | Evaluation report JSON per call |
 
-## Architecture
+---
 
-See `IMPLEMENTATION_PLAN.md` for the full implementation plan and design. A short architecture summary will be added here (or in `ARCHITECTURE.md`) before submission.
+## Documentation
+
+| Document | Purpose |
+|----------|---------|
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** | How the system works and why the main design choices were made. |
+| **LLM evaluation** | `LLM_EVALUATION_TABULATION.md` — LLM-as-judge scores and analysis by scenario. |
+| **Human evaluation** | `HUMAN_EVALUATION_V1.md` — Human findings, evidence from transcripts/reports, and bug report summary. |
+
+Transcripts live in `transcripts/`; evaluation report JSON per call in `reports/`.
