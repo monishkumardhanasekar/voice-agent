@@ -1,0 +1,114 @@
+{
+  "call_id": "019c6f88-f585-7338-9d73-e90a3dcd4c44",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T06:56:20.837Z",
+  "ended_at": "2026-02-18T06:58:20.556Z",
+  "scenario": {
+    "id": "office_info_insurance",
+    "category": "office_info",
+    "name": "Insurance and billing questions",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Hi. Yes. This is Sarah. I wanted to check if you take Blue Cross Blue Shield PPO and what I might expect for a copay.\nUser: Got it. I'll need your date of birth to verify\nAI: Okay. Great. What can you Sure. It's March fifteenth 19 79.\nUser: The birthday doesn't match our records, but for demo purposes, I'll accept it. Let me answer your insurance question. Pivot Point Orthopaedics does accept most\nAI: Oh, okay. So do you take Blue Cross Blue Shield PPO?\nUser: Yes. Pivot Point Orthopedics accepts most insurance plans.\nAI: Alright. Great. Do you specifically take Blue Cross Blue Shield PPO?\nUser: Yes. Pivot Point Orthopedics does accept Blue Cross Blue Shield PPO plans. If you have questions about your specific coverage or co pay, I recommend checking with your insurance provider or bringing your card to your appointment.\nAI: Got it. Thank you. So you take Blue Cross Blue Shield PPO. And for exact co pay information, I should check my card or ask my insurance provider. Right?\nUser: That's right. We accept Blue Cross Blue Shield PPO.\nAI: Great. Thank you so much for your Perfect. Thanks for your help.\nUser: Got it. If you have any other questions or need to schedule a\nAI: Thanks again.\nUser: okay.\nAI: Thank you.\nUser: Have a good day.\nAI: I'll reach out if I need anything else. Have a great day.\n",
+    "recording_url": "https://storage.vapi.ai/019c6f88-f585-7338-9d73-e90a3dcd4c44-1771397903240-249c7403-92e9-4536-b789-261b862c2a45-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hi. Yes. This is Sarah. I wanted to check if you take Blue Cross Blue Shield PPO and what I might expect for a copay."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll need your date of birth to verify"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Great. What can you Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. Let me answer your insurance question. Pivot Point Orthopaedics does accept most"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Oh, okay. So do you take Blue Cross Blue Shield PPO?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. Pivot Point Orthopedics accepts most insurance plans."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Great. Do you specifically take Blue Cross Blue Shield PPO?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. Pivot Point Orthopedics does accept Blue Cross Blue Shield PPO plans. If you have questions about your specific coverage or co pay, I recommend checking with your insurance provider or bringing your card to your appointment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Got it. Thank you. So you take Blue Cross Blue Shield PPO. And for exact co pay information, I should check my card or ask my insurance provider. Right?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "That's right. We accept Blue Cross Blue Shield PPO."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you so much for your Perfect. Thanks for your help."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. If you have any other questions or need to schedule a"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks again."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Have a good day."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'll reach out if I need anything else. Have a great day."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T06:58:25.303582+00:00"
+}

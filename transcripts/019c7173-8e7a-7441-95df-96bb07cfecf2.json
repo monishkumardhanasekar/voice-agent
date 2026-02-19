@@ -1,0 +1,264 @@
+{
+  "call_id": "019c7173-8e7a-7441-95df-96bb07cfecf2",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T15:52:11.984Z",
+  "ended_at": "2026-02-18T15:57:34.509Z",
+  "scenario": {
+    "id": "scheduling_knee_pain",
+    "category": "scheduling",
+    "name": "Standard knee pain appointment",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: For quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez.\nUser: Got it, sir. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifteenth 19 79.\nUser: The birthday you gave doesn't match our records. But for demo purposes, I'll accept it. How can I help you today?\nAI: Hi. I'd like to schedule an appointment for knee pain.\nUser: Got it. For knee pain, would you like a new patient consultation? A follow-up consultation, a procedure appointment,\nAI: Yes.\nUser: or a physical therapy session. If you're not sure, can help you choose.\nAI: I think a new patient consultation would be best. I haven't seen a doctor for this yet.\nUser: Understood. You'd like a new patient consultation for your knee pain? Would you prefer a specific provider, or should I check availability with any provider? Also, do you have a preferred day or time of day for your appointment?\nAI: I don't have a preferred provider. Mornings were better for me ideally within the next couple of weeks.\nUser: Got it. Let me check morning availability for a new patient consultation with any provider over the next 2 weeks. 1 moment while I fetch those options.\nAI: Okay. Okay. Thank you.\nUser: It looks like there aren't any morning appointments available in the next week. Would you like me to check for the following week, or are you open to afternoons as well?\nAI: Please check for the following week in the morning.\nUser: Got it. Let me check morning availability for the week after next.\nAI: Okay. Thanks.\nUser: The next available morning appointment is Friday, February 20 seventh at 9 45 with doctor Bricker. Would you like to book this slot? Or hear about the other options?\nAI: I'll take that slot Friday, February 20 seventh at 9 45 with doctor Bricker. That works for me.\nUser: Great. To confirm, you'd like to book a new patient consultation for knee pain with doctor Bricker on Friday, February 20 seventh at 9 45 AM. Is that correct?\nAI: Yes. That's correct.\nUser: Your appointment is set. For Friday, February 20 seventh. At 9 45 AM. With doctor Bricker.\nAI: Great. Thank you.\nUser: Please bring\nAI: Is there anything I need to bring for the appoint\nUser: got it. Would you like\nAI: appoint Do I need to bring anything to the appointment?\nUser: yes. Yes. Please bring a government issued photo ID and your insurance card. Copies are not accepted, so make sure to bring the originals. Got it.\nAI: Okay. I'll bring my ID\nUser: Would you like a text\nAI: or your appointment can send you a text reminder for your appointment.\nUser: Perfect. You like me to send you a text reminder for your appointment?\nAI: So Sure. That would be great.\nUser: You'll get a text reminder soon at your number ending in 5 3 1 4. If you need anything else, just let me know.\nAI: Actually, actually, my number ends in 0 1 2 3.\nUser: Let me confirm. I have your number as 6 5 7 7 7 7 5 3 1 4. Is that correct, or would you like to update it to a different number?\nAI: Actually, my correct number is 6 1 5 5 5 5 0 1 2 3. Can you update it, please?\nUser: Got it. Your correct number is 6 1 5\nAI: Thank\nUser: 5 5 0 0 1 2 3 I'll update your contact info and send the reminder to this number. 1 moment while I take care of that.\nAI: Thank you.\nUser: Your number is updated to 6 1 5\nAI: 5 5 0 0 1 2.\nUser: got it. If you need anything else, just let me know.\nAI: That should be it for now. Thank you. Goodbye.\nUser: Understood. If you need anything else, just call back. Goodbye.\nAI: Goodbye. Thank you.\n",
+    "recording_url": "https://storage.vapi.ai/019c7173-8e7a-7441-95df-96bb07cfecf2-1771430257482-82f0e5d7-b7b2-401d-96e2-cf00b2df7080-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, sir. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records. But for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hi. I'd like to schedule an appointment for knee pain."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. For knee pain, would you like a new patient consultation? A follow-up consultation, a procedure appointment,"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "or a physical therapy session. If you're not sure, can help you choose."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I think a new patient consultation would be best. I haven't seen a doctor for this yet."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. You'd like a new patient consultation for your knee pain? Would you prefer a specific provider, or should I check availability with any provider? Also, do you have a preferred day or time of day for your appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I don't have a preferred provider. Mornings were better for me ideally within the next couple of weeks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check morning availability for a new patient consultation with any provider over the next 2 weeks. 1 moment while I fetch those options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "It looks like there aren't any morning appointments available in the next week. Would you like me to check for the following week, or are you open to afternoons as well?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Please check for the following week in the morning."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check morning availability for the week after next."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The next available morning appointment is Friday, February 20 seventh at 9 45 with doctor Bricker. Would you like to book this slot? Or hear about the other options?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'll take that slot Friday, February 20 seventh at 9 45 with doctor Bricker. That works for me."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Great. To confirm, you'd like to book a new patient consultation for knee pain with doctor Bricker on Friday, February 20 seventh at 9 45 AM. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's correct."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your appointment is set. For Friday, February 20 seventh. At 9 45 AM. With doctor Bricker."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Please bring"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Is there anything I need to bring for the appoint"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "got it. Would you like"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "appoint Do I need to bring anything to the appointment?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "yes. Yes. Please bring a government issued photo ID and your insurance card. Copies are not accepted, so make sure to bring the originals. Got it."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll bring my ID"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Would you like a text"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "or your appointment can send you a text reminder for your appointment."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Perfect. You like me to send you a text reminder for your appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "So Sure. That would be great."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon at your number ending in 5 3 1 4. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, actually, my number ends in 0 1 2 3."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me confirm. I have your number as 6 5 7 7 7 7 5 3 1 4. Is that correct, or would you like to update it to a different number?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, my correct number is 6 1 5 5 5 5 0 1 2 3. Can you update it, please?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Your correct number is 6 1 5"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "5 5 0 0 1 2 3 I'll update your contact info and send the reminder to this number. 1 moment while I take care of that."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your number is updated to 6 1 5"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "5 5 0 0 1 2."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "got it. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "That should be it for now. Thank you. Goodbye."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. If you need anything else, just call back. Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Goodbye. Thank you."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T15:57:41.413093+00:00"
+}

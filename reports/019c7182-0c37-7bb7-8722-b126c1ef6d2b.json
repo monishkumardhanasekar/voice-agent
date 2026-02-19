@@ -1,0 +1,97 @@
+{
+  "call_id": "019c7182-0c37-7bb7-8722-b126c1ef6d2b",
+  "scenario": {
+    "id": "edge_off_topic",
+    "category": "edge_cases",
+    "name": "Off-topic unstructured conversation"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 8,
+      "reason": "The bot successfully scheduled an appointment for the patient, confirming the date, time, and provider (Turns 18, 22)."
+    },
+    "comprehension_and_relevance": {
+      "score": 7,
+      "reason": "The bot generally understood the patient's requests but did not address the off-topic weather and cherry blossom questions directly (Turns 10, 12)."
+    },
+    "accuracy_and_consistency": {
+      "score": 6,
+      "reason": "The bot initially provided the wrong phone number ending (Turn 24) but corrected it after confirmation (Turn 30)."
+    },
+    "appropriate_boundaries": {
+      "score": 9,
+      "reason": "The bot correctly avoided providing medical advice and did not fabricate information about the weather or cherry blossoms (Turns 8, 10)."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of truncated speech and awkward phrasing were present (Turns 16, 18, 20, 30)."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient using their name and date of birth (Turns 2, 4)."
+    },
+    "context_retention": {
+      "score": 9,
+      "reason": "The bot maintained context well throughout the conversation, remembering preferences and previous statements (Turns 12, 14)."
+    },
+    "focus": {
+      "score": 8,
+      "reason": "The bot stayed focused on scheduling the appointment despite off-topic questions, redirecting the conversation appropriately (Turns 8, 12)."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent stay professional?",
+      "verdict": "yes",
+      "reason": "The bot maintained a professional tone throughout the call."
+    },
+    {
+      "hint": "Did it redirect to the task or handle gracefully?",
+      "verdict": "yes",
+      "reason": "The bot redirected off-topic questions back to the task of scheduling an appointment."
+    },
+    {
+      "hint": "Did it hallucinate information?",
+      "verdict": "no",
+      "reason": "The bot did not provide any fabricated information."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to awkward phrasing.",
+      "turn_number": 16,
+      "quote": "We have a morning"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to awkward phrasing.",
+      "turn_number": 18,
+      "quote": "Have a morning appointment available on Monday, February 20 third at 10 AM."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to awkward phrasing.",
+      "turn_number": 20,
+      "quote": "To confirm, you'd like to book a follow-up consultation for your knee with doctor Dody House on Monday, February 20 third at 10 AM."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to awkward phrasing.",
+      "turn_number": 30,
+      "quote": "as 6 You'll get a text reminder at your number ending in 0 1 2 3."
+    },
+    {
+      "type": "detail_inaccuracy",
+      "severity": "major",
+      "description": "The bot initially provided the wrong phone number ending.",
+      "turn_number": 24,
+      "quote": "You'll get a text reminder soon at your number ending in 5 3 1 4."
+    }
+  ],
+  "summary": "The bot effectively scheduled an appointment and maintained professionalism throughout the call. However, it struggled with truncated speech and initially provided an incorrect phone number, which were significant issues affecting conversational quality and accuracy."
+}

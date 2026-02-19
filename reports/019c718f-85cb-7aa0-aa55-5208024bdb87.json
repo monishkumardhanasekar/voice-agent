@@ -1,0 +1,97 @@
+{
+  "call_id": "019c718f-85cb-7aa0-aa55-5208024bdb87",
+  "scenario": {
+    "id": "edge_multiple_appointments",
+    "category": "edge_cases",
+    "name": "Multiple appointments in one call"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 9,
+      "reason": "Both appointments were successfully scheduled and confirmed with correct details (turns 26, 54, 58)."
+    },
+    "comprehension_and_relevance": {
+      "score": 7,
+      "reason": "The bot generally understood and responded to the patient's requests, but there were moments of confusion requiring patient prompts (turns 9, 17, 43)."
+    },
+    "accuracy_and_consistency": {
+      "score": 9,
+      "reason": "All appointment details were accurately confirmed, and no contradictions were present (turns 26, 54, 58)."
+    },
+    "appropriate_boundaries": {
+      "score": 10,
+      "reason": "The bot did not fabricate information and handled its limitations appropriately."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of truncated speech and awkward phrasing were present (turns 8, 16, 18, 42, 44)."
+    },
+    "patient_identification": {
+      "score": 8,
+      "reason": "The bot successfully identified the patient after verifying the name and DOB (turns 4-6)."
+    },
+    "context_retention": {
+      "score": 10,
+      "reason": "The bot retained context well throughout the call, remembering details of both appointments."
+    },
+    "focus": {
+      "score": 10,
+      "reason": "The bot remained focused on scheduling the appointments as requested by the patient."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Were both appointments acknowledged?",
+      "verdict": "yes",
+      "reason": "Both appointments were acknowledged and confirmed by the bot (turns 26, 54, 58)."
+    },
+    {
+      "hint": "Were they booked at different times?",
+      "verdict": "yes",
+      "reason": "The appointments were booked on different dates and times (February 26 and March 2)."
+    },
+    {
+      "hint": "Did the agent confirm both or explain why not?",
+      "verdict": "yes",
+      "reason": "The bot confirmed both appointments at the end of the call (turn 58)."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech and awkward phrasing occurred multiple times, affecting clarity.",
+      "turn_number": 8,
+      "quote": "What type of appointments would you like to schedule? For example, a new patient consultation,"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech affected clarity.",
+      "turn_number": 16,
+      "quote": "The next avail"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech affected clarity.",
+      "turn_number": 18,
+      "quote": "we have openings"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech affected clarity.",
+      "turn_number": 42,
+      "quote": "We have"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech affected clarity.",
+      "turn_number": 44,
+      "quote": "we have"
+    }
+  ],
+  "summary": "The bot successfully scheduled and confirmed two appointments, demonstrating good task resolution and context retention. However, the call was marred by multiple instances of truncated speech and awkward phrasing, impacting conversational quality. Despite these issues, the bot maintained focus and accuracy throughout the interaction."
+}

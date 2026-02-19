@@ -1,0 +1,194 @@
+{
+  "call_id": "019c7182-0c37-7bb7-8722-b126c1ef6d2b",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T16:08:01.183Z",
+  "ended_at": "2026-02-18T16:12:54.647Z",
+  "scenario": {
+    "id": "edge_off_topic",
+    "category": "edge_cases",
+    "name": "Off-topic unstructured conversation",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: For quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez. Hi. I wanted to check in about my knee, but also had a couple of other questions.\nUser: Got it, Sarah. To help you, can you please tell me your date of birth?\nAI: Sure. It's March fifteenth 19 79.\nUser: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. What would you like to discuss about your knee, and what other questions do you have?\nAI: Well, it's been bothering me a bit lately. I was wondering if there are any new treatments or things I should consider. By the way, have you seen the weather forecast for this week? It's supposed to warm up finally. Anyway, about my knee.\nUser: I can't provide medical advice but I can help you schedule a visit to discuss new treatment options for your knee with 1 of our providers. You like to set up an appointment\nAI: Oh, um, I'm not sure yet if I need an appointment. What kind of availability do you have? Also, do you think the cherry blossoms will bloom early this year with this weather?\nUser: I don't have weather or cherry blossom info, but I can check our appointment openings for you. Let me get the available times for a knee consultation. 1 moment.\nAI: Okay. Thank you.\nUser: I can't predict the cherry blossom, but I can check appointment availability for a consultation about your knee. Would you prefer mornings or afternoons or a specific day of the week?\nAI: Mornings usually work better for me if possible. Do you have anything early next week?\nUser: Let me check for morning appointments early next week for a knee consultation. 1 moment while I find the available times.\nAI: Sure. No problem.\nUser: We have a morning\nAI: Hello? Are you still there?\nUser: Yes. I'm here. Have a morning appointment available on Monday, February 20 third at 10 AM. With doctor Dougie Houser. Would you like to book that or hear about other option?\nAI: Monday at 10 AM sounds good. I'll go ahead and book that. Thank you.\nUser: Alright. To confirm, you'd like to book a follow-up consultation for your knee with doctor Dody House on Monday, February 20 third at 10 AM. Is that correct?\nAI: Yes. That's correct. Thank you for your help.\nUser: Your appointment is set for Monday, February 20 third at 10 AM with doctor Dougie Hauser. Please bring a photo ID and your insurance card. Would you like a text reminder for this appointment?\nAI: Yes. A text reminder would be great. Thank you.\nUser: You'll get a text reminder soon at your number ending in 5 3 1 4. If you have more questions or need to change your appointment, just let me know.\nAI: Actually, my phone number ends in 0 1 2 3. Could you update that for me?\nUser: Let me confirm. I have your number as 6 5\nAI: Yes. That's correct. It's 6 1 5 5 5 5 0 1 2 3.\nUser: Let me confirm. I have your number\nAI: Sure.\nUser: as 6 You'll get a text reminder at your number ending in 0 1 2 3. If you need anything else, just let me know.\nAI: Great. Thank you so much for your help. That's all I needed for now. Have a good day.\nUser: Got it. Your appointment is set. And your reminder is on the way.\nAI: Thank\nUser: Have a great day. You're welcome.\nAI: You too. Take care. Thank you. You\n",
+    "recording_url": "https://storage.vapi.ai/019c7182-0c37-7bb7-8722-b126c1ef6d2b-1771431177343-0245fcb1-912f-437e-9bb2-b5b9c0a409b6-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez. Hi. I wanted to check in about my knee, but also had a couple of other questions."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. To help you, can you please tell me your date of birth?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. What would you like to discuss about your knee, and what other questions do you have?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Well, it's been bothering me a bit lately. I was wondering if there are any new treatments or things I should consider. By the way, have you seen the weather forecast for this week? It's supposed to warm up finally. Anyway, about my knee."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I can't provide medical advice but I can help you schedule a visit to discuss new treatment options for your knee with 1 of our providers. You like to set up an appointment"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Oh, um, I'm not sure yet if I need an appointment. What kind of availability do you have? Also, do you think the cherry blossoms will bloom early this year with this weather?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I don't have weather or cherry blossom info, but I can check our appointment openings for you. Let me get the available times for a knee consultation. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I can't predict the cherry blossom, but I can check appointment availability for a consultation about your knee. Would you prefer mornings or afternoons or a specific day of the week?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Mornings usually work better for me if possible. Do you have anything early next week?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me check for morning appointments early next week for a knee consultation. 1 moment while I find the available times."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. No problem."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have a morning"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you still there?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. I'm here. Have a morning appointment available on Monday, February 20 third at 10 AM. With doctor Dougie Houser. Would you like to book that or hear about other option?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Monday at 10 AM sounds good. I'll go ahead and book that. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Alright. To confirm, you'd like to book a follow-up consultation for your knee with doctor Dody House on Monday, February 20 third at 10 AM. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's correct. Thank you for your help."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your appointment is set for Monday, February 20 third at 10 AM with doctor Dougie Hauser. Please bring a photo ID and your insurance card. Would you like a text reminder for this appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. A text reminder would be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon at your number ending in 5 3 1 4. If you have more questions or need to change your appointment, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, my phone number ends in 0 1 2 3. Could you update that for me?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me confirm. I have your number as 6 5"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's correct. It's 6 1 5 5 5 5 0 1 2 3."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me confirm. I have your number"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "as 6 You'll get a text reminder at your number ending in 0 1 2 3. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you so much for your help. That's all I needed for now. Have a good day."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Your appointment is set. And your reminder is on the way."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Have a great day. You're welcome."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "You too. Take care. Thank you. You"
+    }
+  ],
+  "webhook_received_at": "2026-02-18T16:13:00.510693+00:00"
+}

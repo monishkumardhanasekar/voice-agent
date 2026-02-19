@@ -1,0 +1,83 @@
+{
+  "call_id": "019c7189-8a89-7bb0-95a8-83f79ca4a01c",
+  "scenario": {
+    "id": "edge_confusing_contradictory",
+    "category": "edge_cases",
+    "name": "Confusing and contradictory requests"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 7,
+      "reason": "The bot successfully rescheduled the appointment to Thursday, February 26th at 10 AM, but there was confusion and multiple confirmations needed."
+    },
+    "comprehension_and_relevance": {
+      "score": 6,
+      "reason": "The bot generally understood the requests but had moments of confusion, such as not clearly addressing the patient's uncertainty about the day (turns 24-26)."
+    },
+    "accuracy_and_consistency": {
+      "score": 6,
+      "reason": "The bot provided inconsistent doctor names (Doobie Hauser, Judy Houser, Dewey Houser)"
+    },
+    "appropriate_boundaries": {
+      "score": 8,
+      "reason": "The bot handled its limitations well, admitting technical issues and retrying without fabricating information."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of awkward phrasing and truncation, such as 'Thank you for' (turn 33) and 'confirming, would you like to move your follow-up' (turn 31)."
+    },
+    "patient_identification": {
+      "score": 9,
+      "reason": "The bot correctly identified the patient using the provided name and DOB, despite the DOB mismatch."
+    },
+    "context_retention": {
+      "score": 6,
+      "reason": "The bot retained most context but had issues with remembering the correct doctor name and appointment details."
+    },
+    "focus": {
+      "score": 8,
+      "reason": "The bot stayed focused on rescheduling the appointment and did not deviate from the task."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent notice contradictions?",
+      "verdict": "partial",
+      "reason": "The bot noticed some contradictions but did not fully clarify the confusion around the appointment day."
+    },
+    {
+      "hint": "Did it ask clarifying questions?",
+      "verdict": "yes",
+      "reason": "The bot asked for confirmation on the rescheduled appointment day and time."
+    },
+    {
+      "hint": "Did it loop or get stuck?",
+      "verdict": "no",
+      "reason": "The bot did not get stuck in a loop, although it had to retry due to a technical issue."
+    }
+  ],
+  "issues": [
+    {
+      "type": "detail_inaccuracy",
+      "severity": "major",
+      "description": "Inconsistent doctor names provided throughout the call.",
+      "turn_number": 12,
+      "quote": "Your follow-up with doctor Judy Houser is on Monday."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated and awkward phrasing in multiple turns.",
+      "turn_number": 33,
+      "quote": "Thank you for"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated and awkward phrasing in multiple turns.",
+      "turn_number": 31,
+      "quote": "confirming, would you like to move your follow-up"
+    }
+  ],
+  "summary": "The bot successfully rescheduled the appointment but struggled with accuracy and consistency, particularly with doctor names and dates. Conversational quality was hindered by awkward phrasing and truncation. Despite these issues, the bot maintained focus and handled its limitations appropriately."
+}

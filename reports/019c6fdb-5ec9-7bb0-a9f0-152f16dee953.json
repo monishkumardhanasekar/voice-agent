@@ -1,0 +1,107 @@
+{
+  "call_id": "019c6fdb-5ec9-7bb0-a9f0-152f16dee953",
+  "scenario": {
+    "id": "scheduling_vague_day_reference",
+    "category": "scheduling",
+    "name": "Vague day reference — 'this Thursday' / 'next Friday'"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 7,
+      "reason": "The appointment was successfully scheduled for the correct date and time, but there were issues with confirming the phone number for reminders (Turn 33-35)."
+    },
+    "comprehension_and_relevance": {
+      "score": 6,
+      "reason": "The bot misunderstood 'this Thursday' initially, but corrected itself after the patient clarified (Turn 18-20)."
+    },
+    "accuracy_and_consistency": {
+      "score": 7,
+      "reason": "The bot provided accurate dates and times for the appointments, but there was a minor error in the doctor's name (Turn 31)."
+    },
+    "appropriate_boundaries": {
+      "score": 8,
+      "reason": "The bot correctly handled its limitations regarding updating the phone number and offered a fallback by notifying the clinic support team (Turn 35)."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of truncated speech and awkward phrasing were present, impacting the flow of the conversation (Turn 14, 16, 26, 29)."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient using the provided name and date of birth (Turn 2-6)."
+    },
+    "context_retention": {
+      "score": 9,
+      "reason": "The bot retained context well, remembering the patient's request and previous interactions, with a minor slip in the doctor's name (Turn 31)."
+    },
+    "focus": {
+      "score": 9,
+      "reason": "The bot remained focused on scheduling the appointment and did not deviate from the task."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent correctly interpret 'this Thursday'?",
+      "verdict": "no",
+      "reason": "The bot initially misunderstood 'this Thursday' as February 26th instead of February 19th (Turn 18-20)."
+    },
+    {
+      "hint": "If patient said 'next Friday', did the agent get the right date?",
+      "verdict": "yes",
+      "reason": "The bot correctly interpreted 'next Friday' as February 27th (Turn 24)."
+    },
+    {
+      "hint": "Did the agent confirm the calendar date (not just the day name)?",
+      "verdict": "yes",
+      "reason": "The bot confirmed the calendar date along with the day name (Turn 18, 24)."
+    },
+    {
+      "hint": "If the agent got the day wrong, did the patient catch it?",
+      "verdict": "yes",
+      "reason": "The patient corrected the bot when it misunderstood 'this Thursday' (Turn 19)."
+    },
+    {
+      "hint": "Was the final confirmed date consistent with what was discussed?",
+      "verdict": "yes",
+      "reason": "The final confirmed date matched the patient's request after clarification (Turn 31)."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to confusion and requiring patient intervention.",
+      "turn_number": 14,
+      "quote": "The next"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Repeated truncation of speech, impacting clarity.",
+      "turn_number": 16,
+      "quote": "the next"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated sentence during confirmation.",
+      "turn_number": 26,
+      "quote": "Got it. To confirm you'd like to book a new patient"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated sentence during confirmation.",
+      "turn_number": 29,
+      "quote": "Let me confirm booking you"
+    },
+    {
+      "type": "detail_inaccuracy",
+      "severity": "minor",
+      "description": "Incorrect doctor's name provided during confirmation.",
+      "turn_number": 31,
+      "quote": "With doctor Adam Fricker."
+    }
+  ],
+  "summary": "The bot successfully scheduled an appointment, but had issues with interpreting 'this Thursday' and experienced multiple instances of truncated speech. It handled limitations well by notifying the support team about the phone number update. The bot maintained context and focus, but minor errors in details and awkward phrasing affected the overall quality."
+}

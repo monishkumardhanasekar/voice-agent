@@ -1,0 +1,324 @@
+{
+  "call_id": "019c718f-85cb-7aa0-aa55-5208024bdb87",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T16:22:44.412Z",
+  "ended_at": "2026-02-18T16:31:19.025Z",
+  "scenario": {
+    "id": "edge_multiple_appointments",
+    "category": "edge_cases",
+    "name": "Multiple appointments in one call",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: For quality and training purposes, Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez.\nUser: Got it, Sarah. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifth. 79.\nUser: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?\nAI: Hi. I'd like to schedule a couple of appointments at Pivot Point Orthopaedics.\nUser: Alright. What type of appointments would you like to schedule? For example, a new patient consultation,\nAI: What\nUser: follow-up consultation, procedure, or physical therapy session.\nAI: I have a knee issue I'd like to get checked. So a consultation with a knee specialist.\nUser: Understood. For a knee issue, a new patient consultation is a good place to start. Would you like to see a specific provider, or should I check availability with any provider?\nAI: I don't have a specific provider in mind, so any knee specialist would be fine.\nUser: Okay. Let me check the soonest available new patient consult Okay. 1 moment.\nAI: Sure. No problem.\nUser: The next avail\nAI: Hello? Are you\nUser: we have openings\nAI: Great. What are the available options?\nUser: We have openings for a new patient consultation with doctor Dougie Hauser on Thursday February 20 sixth. The available times are 12 45 PM 1 30 PM, and 2 15 PM. Do any of these work for you, or do you have a preferred time?\nAI: I was hoping for a morning appointment if possible. Do you have anything earlier?\nUser: Right now, the earliest available times are in the afternoon. Would you like to book 1 of those, or should I keep checking for other days with morning openings?\nAI: I'll take the 12 45 PM slot with doctor Hauser on February 20 sixth.\nUser: Just to confirm, you'd like to book a new patient consultation with doctor Dovey Houser on Thursday, February 20 sixth at 12 45 PM for your knee issue. Is that correct?\nAI: Yes. That's correct. Thank you.\nUser: Your appointment is set for Thursday, February 20 sixth at 12 45 PM. With doctor Duvy Houser for a new patient consultation about your knee. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment?\nAI: Yes. A text reminder would be great. Thank you.\nUser: You'll get a text reminder soon. At your number ending in 5 3 1 4. Is there anything else I can help you with today?\nAI: Actually, I'd also like to book a separate appointment for my shoulder.\nUser: No problem. Would you like another new patient consultation for your shoulder? Or do you need a different type of appointment?\nAI: A new patient consultation for my shoulder would be perfect.\nUser: Got it. Would you like to see doctor Judy Hauser again or\nAI: Thank you.\nUser: Got it. Would you like to see doctor Judy Hauser again? Or check availability with another provider for your shoulder consultation?\nAI: I'd prefer to check availability with a different provider in possible.\nUser: Okay. Let me check the soonest available new patient consult with a different provider for your shoulder. 1 moment.\nAI: Sure. Take your time. Thank you.\nUser: There aren't any openings with another provider in the next week? Would you like me to check for later dates or a specific month for your shoulder consultation?\nAI: Could you check for the week after? I'm hoping to get it done within the next 2 weeks if possible.\nUser: Got it. Let me check for new patient consultation openings with a different provider for the week after next. 1 line.\nAI: Alright. Thanks.\nUser: We have\nAI: Hello? Are you still there?\nUser: we have\nAI: What are the available times for that week?\nUser: We have new patient consultation openings with doctor Adam Bricker on Monday. March second at 9 45 AM. And 10 30 AM. And Tuesday, March third, at 9 AM. Would you like to book 1 of these times?\nAI: Do you have any do you have any afternoon slots available in the same week?\nUser: Right now, the available times with doctor Adam Birker that week are in the morning. There aren't any afternoon slots open. Would you like to book 1 of the morning appointments, or should I check for\nAI: I can take the 10 30 AM\nUser: Would you like to book\nAI: Sure. I'll book the 10 30 AM slot on Monday, March second.\nUser: Just to confirm, you'd like to book a new patient consultation with doctor Adam Bricker on Monday, March second at 10 30 AM for your shoulder. Is that correct?\nAI: Yes. That's correct. Thank you.\nUser: Your appointment is set for Monday, March second at 10 30 AM with doctor Adam Bricker. For a new patient consultation about your shoulder. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment as well?\nAI: Yes. A text reminder would be great. Thank you.\nUser: You'll get a text reminder soon at your number ending in 5 3 1 4. Is there anything else I can help you with today?\nAI: Can you please confirm both appointments, the dates, times, and providers?\nUser: You have 2 appointments scheduled. First, with doctor Judy Hauser, on Thursday, February 20 sixth at 12 45 PM, for your knee. Second, with doctor Adam Bricker on Monday, March second at 10 30 AM for your shoulder. Both are new patient consultations. Would you like any more details or help with anything else?\nAI: No. That sounds perfect. Thank you for confirming. I think that's all for now.\nUser: Got it. Both appointments are set. And you'll get text reminders. Have a great day.\nAI: Thank you. You too.\n",
+    "recording_url": "https://storage.vapi.ai/019c718f-85cb-7aa0-aa55-5208024bdb87-1771432281801-ec39accf-4771-4f34-9ed0-f9e2812b2a5e-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For quality and training purposes, Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifth. 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hi. I'd like to schedule a couple of appointments at Pivot Point Orthopaedics."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Alright. What type of appointments would you like to schedule? For example, a new patient consultation,"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "What"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "follow-up consultation, procedure, or physical therapy session."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I have a knee issue I'd like to get checked. So a consultation with a knee specialist."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. For a knee issue, a new patient consultation is a good place to start. Would you like to see a specific provider, or should I check availability with any provider?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I don't have a specific provider in mind, so any knee specialist would be fine."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. Let me check the soonest available new patient consult Okay. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. No problem."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The next avail"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "we have openings"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. What are the available options?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have openings for a new patient consultation with doctor Dougie Hauser on Thursday February 20 sixth. The available times are 12 45 PM 1 30 PM, and 2 15 PM. Do any of these work for you, or do you have a preferred time?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I was hoping for a morning appointment if possible. Do you have anything earlier?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Right now, the earliest available times are in the afternoon. Would you like to book 1 of those, or should I keep checking for other days with morning openings?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'll take the 12 45 PM slot with doctor Hauser on February 20 sixth."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Just to confirm, you'd like to book a new patient consultation with doctor Dovey Houser on Thursday, February 20 sixth at 12 45 PM for your knee issue. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's correct. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your appointment is set for Thursday, February 20 sixth at 12 45 PM. With doctor Duvy Houser for a new patient consultation about your knee. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. A text reminder would be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon. At your number ending in 5 3 1 4. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, I'd also like to book a separate appointment for my shoulder."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "No problem. Would you like another new patient consultation for your shoulder? Or do you need a different type of appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "A new patient consultation for my shoulder would be perfect."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Would you like to see doctor Judy Hauser again or"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Would you like to see doctor Judy Hauser again? Or check availability with another provider for your shoulder consultation?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'd prefer to check availability with a different provider in possible."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. Let me check the soonest available new patient consult with a different provider for your shoulder. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. Take your time. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "There aren't any openings with another provider in the next week? Would you like me to check for later dates or a specific month for your shoulder consultation?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Could you check for the week after? I'm hoping to get it done within the next 2 weeks if possible."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check for new patient consultation openings with a different provider for the week after next. 1 line."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you still there?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "we have"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "What are the available times for that week?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have new patient consultation openings with doctor Adam Bricker on Monday. March second at 9 45 AM. And 10 30 AM. And Tuesday, March third, at 9 AM. Would you like to book 1 of these times?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Do you have any do you have any afternoon slots available in the same week?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Right now, the available times with doctor Adam Birker that week are in the morning. There aren't any afternoon slots open. Would you like to book 1 of the morning appointments, or should I check for"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I can take the 10 30 AM"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Would you like to book"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. I'll book the 10 30 AM slot on Monday, March second."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Just to confirm, you'd like to book a new patient consultation with doctor Adam Bricker on Monday, March second at 10 30 AM for your shoulder. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's correct. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your appointment is set for Monday, March second at 10 30 AM with doctor Adam Bricker. For a new patient consultation about your shoulder. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment as well?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. A text reminder would be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon at your number ending in 5 3 1 4. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Can you please confirm both appointments, the dates, times, and providers?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You have 2 appointments scheduled. First, with doctor Judy Hauser, on Thursday, February 20 sixth at 12 45 PM, for your knee. Second, with doctor Adam Bricker on Monday, March second at 10 30 AM for your shoulder. Both are new patient consultations. Would you like any more details or help with anything else?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "No. That sounds perfect. Thank you for confirming. I think that's all for now."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Both appointments are set. And you'll get text reminders. Have a great day."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you. You too."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T16:31:25.952300+00:00"
+}

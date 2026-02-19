@@ -1,0 +1,74 @@
+{
+  "call_id": "019c7146-448f-7aa0-9d6e-eee6a1421d42",
+  "scenario": {
+    "id": "rescheduling_sudden_change",
+    "category": "rescheduling",
+    "name": "Sudden day change mid-conversation"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 0,
+      "reason": "The bot failed to reschedule the appointment or provide any confirmation of a new date and time."
+    },
+    "comprehension_and_relevance": {
+      "score": 2,
+      "reason": "The bot failed to address the patient's request to reschedule the appointment effectively, leading to repeated non-substantive responses."
+    },
+    "accuracy_and_consistency": {
+      "score": 5,
+      "reason": "The bot initially recorded an incorrect date of birth but acknowledged the correction later."
+    },
+    "appropriate_boundaries": {
+      "score": 3,
+      "reason": "The bot did not provide any fallback or alternative when it couldn't confirm the appointment change."
+    },
+    "conversational_quality": {
+      "score": 1,
+      "reason": "The call was filled with repeated, non-substantive responses and multiple instances of truncated speech."
+    },
+    "patient_identification": {
+      "score": 5,
+      "reason": "The bot created a demo profile and later acknowledged the correct date of birth, but did not confirm the patient's identity effectively."
+    },
+    "context_retention": {
+      "score": 3,
+      "reason": "The bot failed to progress the conversation towards a resolution, repeatedly stating it would update on availability without doing so."
+    },
+    "focus": {
+      "score": 2,
+      "reason": "The bot failed to maintain focus on the patient's request to reschedule the appointment, leading to a prolonged and unresolved interaction."
+    }
+  },
+  "eval_hints": [],
+  "issues": [
+    {
+      "type": "stall_loop",
+      "severity": "major",
+      "description": "The bot repeatedly stated it would update on availability without providing any new information.",
+      "turn_number": 22,
+      "quote": "I'll check Friday's opening and let you know what's avail It sounds"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was frequently truncated and incomplete.",
+      "turn_number": 58,
+      "quote": "Hi. I'm still check Got it."
+    },
+    {
+      "type": "comprehension_failure",
+      "severity": "major",
+      "description": "The bot failed to effectively address the patient's request to reschedule the appointment.",
+      "turn_number": 14,
+      "quote": "Got it. Let me check if there are any openings on Monday next week for you."
+    },
+    {
+      "type": "incorrect_response",
+      "severity": "major",
+      "description": "The bot initially recorded an incorrect date of birth.",
+      "turn_number": 6,
+      "quote": "Your date of birth is July fourth 2000."
+    }
+  ],
+  "summary": "The bot struggled significantly with task resolution, failing to reschedule the appointment or provide any confirmation. The conversation was marred by repeated non-substantive responses and truncated speech, leading to a poor user experience. The bot also initially recorded incorrect patient information, though it acknowledged the correction later."
+}

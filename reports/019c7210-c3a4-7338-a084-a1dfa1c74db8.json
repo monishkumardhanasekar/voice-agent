@@ -1,0 +1,90 @@
+{
+  "call_id": "019c7210-c3a4-7338-a084-a1dfa1c74db8",
+  "scenario": {
+    "id": "rescheduling_different_day",
+    "category": "rescheduling",
+    "name": "Simple reschedule to different day"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 6,
+      "reason": "The bot successfully rescheduled the appointment to a new date and time (Turn 33), but failed to confirm the original appointment as it was not found in the records (Turn 12)."
+    },
+    "comprehension_and_relevance": {
+      "score": 5,
+      "reason": "The bot misunderstood the patient's original appointment details and failed to confirm it, leading to confusion (Turn 12)."
+    },
+    "accuracy_and_consistency": {
+      "score": 7,
+      "reason": "The bot accurately confirmed the new appointment details (Turn 33), but failed to verify the original appointment correctly (Turn 12)."
+    },
+    "appropriate_boundaries": {
+      "score": 8,
+      "reason": "The bot did not fabricate information and handled the lack of original appointment data appropriately by offering alternative dates (Turn 14)."
+    },
+    "conversational_quality": {
+      "score": 4,
+      "reason": "Multiple instances of truncated speech and awkward phrasing were present (Turns 10, 16, 33)."
+    },
+    "patient_identification": {
+      "score": 8,
+      "reason": "The bot correctly identified the patient using the provided date of birth (Turn 6)."
+    },
+    "context_retention": {
+      "score": 7,
+      "reason": "The bot generally retained context but failed to confirm the original appointment, which was a key detail (Turn 12)."
+    },
+    "focus": {
+      "score": 9,
+      "reason": "The bot remained focused on rescheduling the appointment throughout the call."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent confirm the original appointment?",
+      "verdict": "no",
+      "reason": "The bot could not find the original appointment in the records (Turn 12)."
+    },
+    {
+      "hint": "Did the agent ask reason for rescheduling?",
+      "verdict": "yes",
+      "reason": "The bot asked for the reason for rescheduling (Turn 8)."
+    },
+    {
+      "hint": "Was a new date/time confirmed?",
+      "verdict": "yes",
+      "reason": "The bot confirmed the new appointment date and time (Turn 33)."
+    }
+  ],
+  "issues": [
+    {
+      "type": "comprehension_failure",
+      "severity": "major",
+      "description": "The bot failed to confirm the original appointment, leading to confusion.",
+      "turn_number": 12,
+      "quote": "I see a few upcoming appointments for you, but none are listed for next Wednesday at 10 AM."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated and awkward.",
+      "turn_number": 10,
+      "quote": "Understood. Me check for other available times for"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated and awkward.",
+      "turn_number": 16,
+      "quote": "Got it. Let me check for available morning appointments next there aren't any morning openings next"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated and awkward.",
+      "turn_number": 33,
+      "quote": "Your appointment is now set for Tuesday, March third. At 10 30 AM with doctor Bricker. Would you like a text reminder for this appointment? Your appointment is now set for Tuesday,"
+    }
+  ],
+  "summary": "The bot successfully rescheduled the appointment but failed to confirm the original appointment, leading to confusion. Multiple instances of truncated and awkward speech affected the conversational quality. The bot maintained focus on the task and handled its boundaries well."
+}

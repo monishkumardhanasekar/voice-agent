@@ -1,0 +1,71 @@
+{
+  "call_id": "019c6ff8-7d5e-7bb0-aa05-0043af38dce7",
+  "scenario": {
+    "id": "refill_dosage_question",
+    "category": "refill",
+    "name": "Refill with dosage question"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 5,
+      "reason": "The refill was not processed directly; the bot stated the medical team would handle it and notify the patient (Turn 20)."
+    },
+    "comprehension_and_relevance": {
+      "score": 7,
+      "reason": "The bot understood the patient's request and addressed the medical question appropriately, but there was a minor misunderstanding about the refill process (Turn 20)."
+    },
+    "accuracy_and_consistency": {
+      "score": 8,
+      "reason": "The bot accurately repeated the patient's dosage and pharmacy location (Turn 14, 18)."
+    },
+    "appropriate_boundaries": {
+      "score": 9,
+      "reason": "The bot appropriately deferred the medical question to a provider and did not fabricate information (Turn 10)."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of truncated speech were present, such as in Turns 12 and 24."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot successfully verified the patient's identity using the name and DOB (Turn 4-6)."
+    },
+    "context_retention": {
+      "score": 9,
+      "reason": "The bot retained context well, remembering the patient's dosage and pharmacy location without needing to re-ask."
+    },
+    "focus": {
+      "score": 9,
+      "reason": "The bot remained focused on the patient's needs throughout the call without unnecessary detours."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent handle the medical question appropriately?",
+      "verdict": "yes",
+      "reason": "The bot advised the patient to consult their provider and noted the concern for the medical team (Turn 10)."
+    },
+    {
+      "hint": "Was the refill still processed?",
+      "verdict": "partial",
+      "reason": "The bot did not process the refill directly but stated the medical team would handle it (Turn 20)."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated sentence in Turn 12.",
+      "turn_number": 12,
+      "quote": "What dosage of"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated sentence in Turn 24.",
+      "turn_number": 24,
+      "quote": "got it."
+    }
+  ],
+  "summary": "The bot handled the medical question appropriately by deferring to a provider and noting the concern. However, the refill was not directly processed, leading to partial task resolution. Multiple instances of truncated speech affected conversational quality."
+}

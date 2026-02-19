@@ -21,7 +21,3 @@ env/
 .DS_Store
 Thumbs.db
 
-# Keep transcripts/ and reports/ in repo for submission 
-transcripts/
-reports/
-scenarios/

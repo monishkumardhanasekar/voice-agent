@@ -1,0 +1,119 @@
+{
+  "call_id": "019c6f96-91dd-7006-8c1d-b3513b88878d",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T07:11:11.795Z",
+  "ended_at": "2026-02-18T07:14:27.684Z",
+  "scenario": {
+    "id": "office_info_doctors",
+    "category": "office_info",
+    "name": "Available doctors and specialties",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez.\nUser: Got it, Sarah. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifteenth 19 79.\nUser: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?\nAI: Hi. I was wondering which doctors you have there and what they specialize in. Trying to figure out who I should see.\nUser: We have 3 doctors at Pivot Point Orthopedics. Doctor Dougie Houser handles quick procedures and first time visits. Doctor Doug Ross specializes in complex or advanced orthopedic procedures. Doctor Adam Brecker, provides care for a wide range of joint and muscle issues, If you tell me a bit about your concern, I could help just who might be the best fit.\nAI: I've been having knee pain and was told I might need an orthopedic specialist. Do you have someone who focuses on knees? What's their name?\nUser: For knee pain, all 3 doctors can help. But doctor Adam Bricker is a great choice for joint and muscle issues including knees. He's known for practical treatment plans and efficient recovery. Would you like to schedule a consultation with doctor Bricker? Or do you want more details about the other doctors?\nAI: Okay. So doctor Adam Bricker is good with knees. Can you tell me more about doctor Doug Ross and whether he focuses on a specific area?\nUser: Doug Ross specializes in complex or advanced orthopedic procedures. He often handles challenging cases that need extra time and precision. While he treats all areas he's best for patients who may need a more involved procedure or have complicated issues. If your knee pain is severe or you've had trouble with past treatments, it could be a good fit. Would you like to hear more about his approach or schedule with him?\nAI: Thanks. That's helpful. So for my knee, I could see doctor Adam Bricker who focuses on joint issues. And doctor Doug Ross for more complex procedures. Right? I'll think about it before scheduling.\nUser: That's right. Doctor Bricker is great for most\nAI: Great. Thank you. I'll call back once I've decided.\nUser: got it. If you have more questions or want to book an\nAI: Thanks for your help. Take Okay. Will do. Thanks so much for your help today.\nUser: You're welcome. Have a good day.\nAI: Take care. Bye. Take care. Bye.\nUser: Take care. Goodbye.\n",
+    "recording_url": "https://storage.vapi.ai/019c6f96-91dd-7006-8c1d-b3513b88878d-1771398870460-357a401d-c390-4dc9-aa1e-dd2cc90130c0-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hi. I was wondering which doctors you have there and what they specialize in. Trying to figure out who I should see."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have 3 doctors at Pivot Point Orthopedics. Doctor Dougie Houser handles quick procedures and first time visits. Doctor Doug Ross specializes in complex or advanced orthopedic procedures. Doctor Adam Brecker, provides care for a wide range of joint and muscle issues, If you tell me a bit about your concern, I could help just who might be the best fit."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I've been having knee pain and was told I might need an orthopedic specialist. Do you have someone who focuses on knees? What's their name?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For knee pain, all 3 doctors can help. But doctor Adam Bricker is a great choice for joint and muscle issues including knees. He's known for practical treatment plans and efficient recovery. Would you like to schedule a consultation with doctor Bricker? Or do you want more details about the other doctors?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. So doctor Adam Bricker is good with knees. Can you tell me more about doctor Doug Ross and whether he focuses on a specific area?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Doug Ross specializes in complex or advanced orthopedic procedures. He often handles challenging cases that need extra time and precision. While he treats all areas he's best for patients who may need a more involved procedure or have complicated issues. If your knee pain is severe or you've had trouble with past treatments, it could be a good fit. Would you like to hear more about his approach or schedule with him?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. That's helpful. So for my knee, I could see doctor Adam Bricker who focuses on joint issues. And doctor Doug Ross for more complex procedures. Right? I'll think about it before scheduling."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "That's right. Doctor Bricker is great for most"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you. I'll call back once I've decided."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "got it. If you have more questions or want to book an"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks for your help. Take Okay. Will do. Thanks so much for your help today."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You're welcome. Have a good day."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Take care. Bye. Take care. Bye."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Take care. Goodbye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T07:14:33.341356+00:00"
+}

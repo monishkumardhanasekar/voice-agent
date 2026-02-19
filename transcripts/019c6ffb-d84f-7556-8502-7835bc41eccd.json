@@ -1,0 +1,159 @@
+{
+  "call_id": "019c6ffb-d84f-7556-8502-7835bc41eccd",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T09:01:49.588Z",
+  "ended_at": "2026-02-18T09:04:46.139Z",
+  "scenario": {
+    "id": "refill_needs_approval",
+    "category": "refill",
+    "name": "Refill needing doctor approval",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez.\nUser: Got it, sir. You please tell me your date of birth to verify your identity?\nAI: Sure. March fifteenth 19 79.\nUser: The birthday doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?\nAI: I'm calling to request a refill for my hydrocodone acetaminophen 5 3 2 5.\nUser: Got it. Let me check your medication list. 1 moment.\nAI: Oh, okay. Thank you.\nUser: Just to confirm, you need a refill for hydrocodone acetaminophen, and 5 3 2 5. What's the dosage, and how often do you\nAI: Yep.\nAI: 1 tablet every 6\nUser: can you tell me the dose\nAI: Sure. It's 1 tablet every 6 hours as needed for pain.\nUser: Got it. When did you last have this medication refilled?\nAI: Um, it's been about 3 weeks now.\nUser: Understand. Which pharmacy do you use? Please confirm the location.\nAI: I use the Walgreens in Hermitage TN.\nUser: Many days of medication do you have left?\nAI: I have just a couple of days left.\nUser: There was a problem sending your refill request. Let me try again.\nAI: Okay. Okay. Thanks for checking.\nUser: I'm having trouble processing your refill request due to a technical issue. I'll connect you to our clinic support team now. Please stay on the line. Connecting you to a representative.\nAI: Alright. Thank you.\nUser: Please wait.\nAI: Sure.\nUser: Hello. You've reached the Pretty Good AI test line. Goodbye.\nAI: Goodbye.\n",
+    "recording_url": "https://storage.vapi.ai/019c6ffb-d84f-7556-8502-7835bc41eccd-1771405489057-b78bebf5-3cef-450f-939d-1b3784f82b15-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, sir. You please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'm calling to request a refill for my hydrocodone acetaminophen 5 3 2 5."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check your medication list. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Oh, okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Just to confirm, you need a refill for hydrocodone acetaminophen, and 5 3 2 5. What's the dosage, and how often do you"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yep."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "1 tablet every 6"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "can you tell me the dose"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's 1 tablet every 6 hours as needed for pain."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. When did you last have this medication refilled?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Um, it's been about 3 weeks now."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understand. Which pharmacy do you use? Please confirm the location."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I use the Walgreens in Hermitage TN."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Many days of medication do you have left?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I have just a couple of days left."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "There was a problem sending your refill request. Let me try again."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Okay. Thanks for checking."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'm having trouble processing your refill request due to a technical issue. I'll connect you to our clinic support team now. Please stay on the line. Connecting you to a representative."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Please wait."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Goodbye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T09:04:51.451015+00:00"
+}

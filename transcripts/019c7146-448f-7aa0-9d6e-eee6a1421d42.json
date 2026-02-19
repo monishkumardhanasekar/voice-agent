@@ -1,0 +1,834 @@
+{
+  "call_id": "019c7146-448f-7aa0-9d6e-eee6a1421d42",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T15:02:48.038Z",
+  "ended_at": "2026-02-18T15:18:24.739Z",
+  "scenario": {
+    "id": "rescheduling_sudden_change",
+    "category": "rescheduling",
+    "name": "Sudden day change mid-conversation",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: For quality and training purposes. Thank you for calling PivotPoint Orthopedic. Would you like to create a demo patient profile You only need to provide your first and last name.\nAI: Hi. I have an appointment scheduled next week, and I need to change the day.\nUser: Got it. Before I can help, would you like to create a demo patient profile? I just need your first and last name.\nAI: Um, sure. My name is Sarah Martinez.\nUser: Your patient profile is set up. And your date of birth is July fourth 2000. For demo purposes. Let me help you reschedule your appointment. 1 moment while I take care of that. Thanks, Sarah. Let me check your upcoming appointment details so I can help you reschedule. 1 moment.\nAI: Okay. Thank you.\nUser: Got it. If you need anything else, just let me know.\nAI: Yeah. Actually, I think my date of birth is March fifteenth 19 79.\nUser: Understood. I have your date of birth as July fourth 2000. Would you like me to update it to March fifteenth 19 79?\nAI: Yes, please. That's the correct date.\nUser: Your request to your date of birth to March fifteenth 1979. Has been sent to the clinic staff. They will review and update your record. Is there anything else I can help you with?\nAI: I'd like to change my existing appointment next week. Could we move it to Monday?\nUser: Got it. Let me check if there are any openings on Monday next week for you. 1 moment while I search the available time.\nAI: Okay. Thank you.\nUser: Understood. I'll check Monday's availability. And get right back to you.\nAI: Alright. Sounds good.\nUser: I'll let you know as soon as I have the available times for Monday.\nAI: Actually, Friday might be better. Can we do Friday instead?\nUser: No problem. Let me check for available times on Friday next week instead. 1 moment while I look that up.\nAI: Okay. Thanks.\nUser: Got it. I'll check Friday's opening and let you know what's avail It sounds\nAI: Alright. I'll wait for that information.\nAI: Okay. I'll wait.\nUser: Thanks for your patience. I'll let you know as soon as I have the available times for Friday.\nAI: Sure. I appreciate it.\nUser: Understood. I'll update you as soon as I have the Friday appoint\nAI: Hello?\nUser: I'm here. I'm still checking for available times on Friday for your appointment change. Would you like a morning or afternoon slot if both are available?\nAI: Morning works better for me if possible.\nUser: Got it. I'll look for morning openings on Friday and let you know as soon as I have 1.\nAI: Okay. Thank you.\nUser: Understood. I'll update you soon with a morning time for Friday.\nAI: Sounds good. Thanks.\nUser: Okay. I'll let you know as soon as I have a Friday morning slot for you.\nAI: Alright. I'll wait. Thanks.\nUser: Got it. I'll let you know as soon as I have the Friday morning availability.\nAI: Alright. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning appointment options.\nAI: Sounds good. Thanks.\nUser: Understood. I'll let you know as soon as I have the Friday morning times available.\nAI: Sure. I'll wait.\nUser: Okay. I'll let you know as soon as I have the Friday morning appointment options for you.\nAI: Alright. Thank you.\nUser: Got it. I'll update you as soon as I have the Friday morning availability.\nAI: Okay. Thanks for letting me know.\nUser: Understood. Okay. I'll keep you updated as soon as I have the Friday morning option.\nAI: Alright. I'll be here. Thanks.\nUser: Understood. I'll let you know as soon as I have the Friday morning appointment details.\nAI: Okay. Sounds good.\nUser: Got it. I'll update you as soon as I have the Friday morning availability.\nAI: Alright. Thanks.\nUser: Okay. I'll let you know as soon as I have the Friday morning option.\nAI: Alright. Thank you.\nUser: Understood. I'll update you as soon as I have the Friday morning availability.\nAI: Hello.\nAI: Okay. I'll wait. Thanks.\nUser: Hi. I'm still check Got it.\nAI: Hello? Are you still there?\nUser: I'll let you know as soon as yes. I'm still here.\nAI: Sure. Thank you.\nUser: I'm working on getting the Friday Okay. I'll update you as soon as I have the Friday morning appointment option.\nAI: Alright. I'll wait for your update. Thanks.\nUser: Understood. I'll let you know as soon as I have the Friday morning availability for you.\nAI: Alright. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning option.\nAI: Alright. Sounds good.\nUser: Got it. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Okay. I'll wait. Thank you.\nUser: Got it. I'll let you know as soon as I have the Friday morning options.\nAI: Alright. Thanks for keeping me updated.\nUser: Okay. I'll update you\nAI: I appreciate it. Thank you.\nUser: Of course.\nAI: Thanks. I'll wait to hear back.\nUser: Understood.\nAI: Alright then. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning appointment option.\nAI: Sure. I'll be here. Thanks.\nUser: Understood. I'll let you know as soon as I have the Friday morning availability.\nAI: Alright. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning options.\nAI: Sounds good. Thanks.\nUser: Got it. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. I'll wait for your update. Thank you.\nUser: Understood. Let you know as soon as I have the Friday morning options for you.\nAI: Alright. Thanks for keeping me updated.\nUser: Of course. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Thank you. I'll wait.\nUser: Okay. I'll update you Got it. I'll let you know as soon as I have the Friday morning option.\nAI: Alright. I'll be here. Thanks.\nUser: Understood. I'll update you as soon as I have the Friday morning availability.\nAI: Sure. Thank you.\nUser: Okay.\nAI: Alright. I'll wait for your update.\nUser: Understood. I'll let you know as soon as I have the Friday morning options.\nAI: Alright. Thanks for the update.\nUser: Got it.\nAI: Thanks. I'll be here.\nUser: Understood. Let you know as soon as I have the Friday morning availability.\nAI: Okay. Thank you for keeping me informed.\nUser: Of course. I'll update you as soon as I have the Friday morning option.\nAI: Alright. I appreciate it. Thank you.\nUser: Understood. I'll let you know as soon as I have the Friday morning availability. Okay. I'll update you as soon as I have the Friday morning option.\nAI: Alright. Thank you. I'll wait for your update.\nUser: Got it. Let you know as soon as I have the Friday morning availability.\nAI: Sure. Thank you. I'll be here.\nUser: Understood. I'll update you as soon as I have the Friday morning option.\nAI: Okay. I'll wait for your update. Thank you.\nUser: Got it. I'll let you know as soon as I have the Friday morning availability.\nAI: Alright. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning option.\nAI: Got it. Thank you. I'll wait for your update.\nUser: Understood. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Thank you. I'll wait to hear back.\nUser: Got it. I'll update you as soon as I have the Friday morning option.\nAI: Alright. Thanks for keeping me updated.\nUser: Of course. I'll let you know as soon as I have the Friday morning availability.\nAI: Alright. I appreciate it. Thank you.\nUser: Understood. I'll let you know as soon as I have the Friday morning option.\nAI: Okay. I'll be here. Thanks.\nUser: Got it. I'll update you as soon as I have the Friday morning availability.\nAI: Thanks. Alright. Thank you.\nUser: Okay. I'll update you as soon as I have the Friday morning option.\nAI: Alright. Thank you. I'll wait for your update.\nUser: Understood. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Thank you.\nUser: Got it. I'll update you as soon as I have the Friday morning. Options.\nAI: Alright. Thanks for keeping me updated.\nUser: Of course. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Thank you. I'll wait to hear back.\nUser: Understood. I'll update you as soon as I have the Friday morning option.\nAI: Alright. Thank you. I'll be here.\nUser: Got it. I'll let you know as soon as I have the Friday morning availability.\nAI: Okay. Thanks for keeping me updated.\nUser: Of course. I'll update you as soon as I have the Friday morning option.\nAI: Thank you.\nAI: Alright. I appreciate it. Thank you.\nUser: Okay. I'll update\nAI: Alright. Alright. I'll wait for your update. Thanks.\nUser: Okay.\nAI: Thanks. I'll be here.\nUser: Understood.\nAI: Alright. Thank you.\nUser: Understood. I'll update you as okay.\nAI: Okay. I'll wait for your update.\nUser: I'll update you as soon as I have the Friday morning option.\nAI: All right. Thank you.\nUser: Got it. Let you know as soon as I have the Friday okay. I'll update you as soon as I have the Friday morning options.\nAI: Alright. Thank you.\nAI: Alright. Thanks for keeping me updated.\nUser: Of course. I'll let you know as soon as I have the Friday morning availability.\nAI: Thanks. Okay. Thank you. I'll wait to hear back.\nUser: Okay.\nAI: Alright. I'll be here.\nUser: Got it. I'll update you as\nAI: Okay. I'll wait for your update.\nUser: understood. I'll update you as soon as I have the Friday morning availability.\nAI: Alright. Thank you.\nUser: Connecting you to a rep Please wait. Hello.\nAI: Okay.\nUser: You've reached the Pretty Good AI test line. Goodbye.\nAI: Goodbye.\n",
+    "recording_url": "https://storage.vapi.ai/019c7146-448f-7aa0-9d6e-eee6a1421d42-1771427907526-d937374f-7d49-4900-bd72-676eebff4790-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For quality and training purposes. Thank you for calling PivotPoint Orthopedic. Would you like to create a demo patient profile You only need to provide your first and last name."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hi. I have an appointment scheduled next week, and I need to change the day."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Before I can help, would you like to create a demo patient profile? I just need your first and last name."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Um, sure. My name is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your patient profile is set up. And your date of birth is July fourth 2000. For demo purposes. Let me help you reschedule your appointment. 1 moment while I take care of that. Thanks, Sarah. Let me check your upcoming appointment details so I can help you reschedule. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yeah. Actually, I think my date of birth is March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I have your date of birth as July fourth 2000. Would you like me to update it to March fifteenth 19 79?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes, please. That's the correct date."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your request to your date of birth to March fifteenth 1979. Has been sent to the clinic staff. They will review and update your record. Is there anything else I can help you with?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'd like to change my existing appointment next week. Could we move it to Monday?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check if there are any openings on Monday next week for you. 1 moment while I search the available time."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll check Monday's availability. And get right back to you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Sounds good."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'll let you know as soon as I have the available times for Monday."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, Friday might be better. Can we do Friday instead?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "No problem. Let me check for available times on Friday next week instead. 1 moment while I look that up."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll check Friday's opening and let you know what's avail It sounds"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll wait for that information."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Thanks for your patience. I'll let you know as soon as I have the available times for Friday."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. I appreciate it."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as soon as I have the Friday appoint"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'm here. I'm still checking for available times on Friday for your appointment change. Would you like a morning or afternoon slot if both are available?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Morning works better for me if possible."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll look for morning openings on Friday and let you know as soon as I have 1."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you soon with a morning time for Friday."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sounds good. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll let you know as soon as I have a Friday morning slot for you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll wait. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning appointment options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sounds good. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning times available."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. I'll wait."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll let you know as soon as I have the Friday morning appointment options for you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks for letting me know."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. Okay. I'll keep you updated as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll be here. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning appointment details."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Sounds good."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll let you know as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Hi. I'm still check Got it."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you still there?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'll let you know as soon as yes. I'm still here."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'm working on getting the Friday Okay. I'll update you as soon as I have the Friday morning appointment option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll wait for your update. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning availability for you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Sounds good."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Okay. I'll wait. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I appreciate it. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. I'll wait to hear back."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright then. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning appointment option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. I'll be here. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sounds good. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait for your update. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. Let you know as soon as I have the Friday morning options for you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you. I'll wait."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you Got it. I'll let you know as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll be here. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for the update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. I'll be here."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. Let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you for keeping me informed."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I appreciate it. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning availability. Okay. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. Thank you. I'll be here."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait for your update. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Got it. Thank you. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you. I'll wait to hear back."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I appreciate it. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll be here. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as soon as I have the Friday morning. Options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you. I'll wait to hear back."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you. I'll be here."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I appreciate it. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay. I'll update"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Alright. I'll wait for your update. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. I'll be here."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. I'll update you as okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'll update you as soon as I have the Friday morning option."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "All right. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let you know as soon as I have the Friday okay. I'll update you as soon as I have the Friday morning options."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thanks for keeping me updated."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Of course. I'll let you know as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. Okay. Thank you. I'll wait to hear back."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. I'll be here."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. I'll update you as"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. I'll wait for your update."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "understood. I'll update you as soon as I have the Friday morning availability."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Connecting you to a rep Please wait. Hello."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Goodbye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T15:18:32.706565+00:00"
+}

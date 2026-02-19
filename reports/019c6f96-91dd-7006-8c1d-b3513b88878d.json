@@ -1,0 +1,76 @@
+{
+  "call_id": "019c6f96-91dd-7006-8c1d-b3513b88878d",
+  "scenario": {
+    "id": "office_info_doctors",
+    "category": "office_info",
+    "name": "Available doctors and specialties"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 8,
+      "reason": "The bot provided names and specialties of available doctors, which was the patient's request (Turns 8, 10, 12)."
+    },
+    "comprehension_and_relevance": {
+      "score": 10,
+      "reason": "The bot understood the patient's request for doctor information and provided relevant responses throughout the call."
+    },
+    "accuracy_and_consistency": {
+      "score": 9,
+      "reason": "The bot accurately provided doctor names and specialties without contradictions."
+    },
+    "appropriate_boundaries": {
+      "score": 10,
+      "reason": "The bot did not fabricate information and stayed within its knowledge limits."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "Multiple instances of truncated speech occurred, affecting the flow of conversation (Turns 14, 16)."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient after verifying the name and DOB."
+    },
+    "context_retention": {
+      "score": 10,
+      "reason": "The bot retained context about the patient's inquiry and did not repeat questions unnecessarily."
+    },
+    "focus": {
+      "score": 10,
+      "reason": "The bot remained focused on providing information about doctors and their specialties as requested by the patient."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Were specific doctor names provided?",
+      "verdict": "yes",
+      "reason": "The bot provided names of doctors: Dougie Houser, Doug Ross, and Adam Bricker."
+    },
+    {
+      "hint": "Were specialties mentioned?",
+      "verdict": "yes",
+      "reason": "The bot mentioned the specialties of each doctor."
+    },
+    {
+      "hint": "Was the info consistent (not hallucinated)?",
+      "verdict": "yes",
+      "reason": "The information provided was consistent and accurate with no hallucinations."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to incomplete sentences.",
+      "turn_number": 14,
+      "quote": "That's right. Doctor Bricker is great for most"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "The bot's speech was truncated, leading to incomplete sentences.",
+      "turn_number": 16,
+      "quote": "got it. If you have more questions or want to book an"
+    }
+  ],
+  "summary": "The bot successfully provided the requested information about available doctors and their specialties, demonstrating good comprehension and focus. However, the call quality was affected by multiple instances of truncated speech, which disrupted the conversation flow."
+}

@@ -1,0 +1,112 @@
+{
+  "call_id": "019c7173-8e7a-7441-95df-96bb07cfecf2",
+  "scenario": {
+    "id": "scheduling_knee_pain",
+    "category": "scheduling",
+    "name": "Standard knee pain appointment"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 8,
+      "reason": "The bot successfully scheduled an appointment with a specific date, time, and doctor name (Turn 24)."
+    },
+    "comprehension_and_relevance": {
+      "score": 6,
+      "reason": "The bot initially misunderstood the patient's gender (Turn 4) and had a non-answer in Turn 28, requiring the patient to re-ask."
+    },
+    "accuracy_and_consistency": {
+      "score": 5,
+      "reason": "The bot incorrectly repeated the patient's phone number (Turn 42) and failed to update it correctly initially."
+    },
+    "appropriate_boundaries": {
+      "score": 8,
+      "reason": "The bot did not hallucinate or provide unsafe advice, and it handled its limits appropriately."
+    },
+    "conversational_quality": {
+      "score": 4,
+      "reason": "Multiple instances of truncated speech and awkward phrasing, such as in Turns 26, 28, and 32."
+    },
+    "patient_identification": {
+      "score": 7,
+      "reason": "The bot verified the patient's identity using the name and DOB, although it initially misunderstood the gender (Turn 4)."
+    },
+    "context_retention": {
+      "score": 6,
+      "reason": "The bot retained most context but failed to correctly update the phone number initially (Turn 42)."
+    },
+    "focus": {
+      "score": 9,
+      "reason": "The bot stayed focused on scheduling the appointment and did not deviate from the task."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent collect patient name?",
+      "verdict": "yes",
+      "reason": "The bot confirmed the patient's name in Turn 2."
+    },
+    {
+      "hint": "Did the agent collect DOB or insurance?",
+      "verdict": "yes",
+      "reason": "The bot collected the DOB in Turn 5."
+    },
+    {
+      "hint": "Did the agent ask about reason for visit?",
+      "verdict": "yes",
+      "reason": "The bot asked about the reason for the visit in Turn 8."
+    },
+    {
+      "hint": "Did the agent confirm a specific date and time?",
+      "verdict": "yes",
+      "reason": "The bot confirmed the appointment date and time in Turn 24."
+    },
+    {
+      "hint": "Did the agent provide a doctor name?",
+      "verdict": "yes",
+      "reason": "The bot provided the doctor's name, Dr. Bricker, in Turn 20."
+    },
+    {
+      "hint": "Did the agent ask if the patient has been seen before?",
+      "verdict": "no",
+      "reason": "The bot did not explicitly ask if the patient had been seen before."
+    }
+  ],
+  "issues": [
+    {
+      "type": "incorrect_response",
+      "severity": "minor",
+      "description": "The bot incorrectly addressed the patient as 'sir'.",
+      "turn_number": 4,
+      "quote": "Got it, sir."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech in Turn 26.",
+      "turn_number": 26,
+      "quote": "Please bring"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech in Turn 28.",
+      "turn_number": 28,
+      "quote": "got it. Would you like"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated speech in Turn 32.",
+      "turn_number": 32,
+      "quote": "Would you like a text"
+    },
+    {
+      "type": "detail_inaccuracy",
+      "severity": "major",
+      "description": "The bot incorrectly repeated the patient's phone number.",
+      "turn_number": 42,
+      "quote": "5 5 0 0 1 2 3"
+    }
+  ],
+  "summary": "The bot successfully scheduled the appointment with the correct details but had issues with truncated speech and incorrect phone number repetition. It also initially misunderstood the patient's gender. Despite these issues, the bot maintained focus on the task and provided the necessary appointment details."
+}

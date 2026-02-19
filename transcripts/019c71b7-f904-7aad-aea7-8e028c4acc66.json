@@ -1,0 +1,114 @@
+{
+  "call_id": "019c71b7-f904-7aad-aea7-8e028c4acc66",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T17:06:56.546Z",
+  "ended_at": "2026-02-18T17:09:24.612Z",
+  "scenario": {
+    "id": "rescheduling_cancel",
+    "category": "rescheduling",
+    "name": "Cancel appointment",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah.\nUser: Got it, Sarah. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifteenth 19 79.\nUser: Sarah, the birthday you gave doesn't match our records. But for demo purposes, I'll accept it. How can I help you today?\nAI: I need to cancel my upcoming appointment.\nUser: Got it. We check your upcoming appointment so we can cancel the right 1.\nAI: It's my knee appointment next week.\nUser: You have a follow-up appointment for your knee on Thursday, February 20 sixth. At 10 AM. With doctor Dody Howes.\nAI: Okay. Yes. That's the 1. Can you cancel it for me, please?\nUser: Got it. Can you tell me the reason you need to cancel this appointment?\nAI: I'm just not able to make it next week.\nUser: Your follow-up appointment with doctor Dutti Howe on Thursday, February 20 sixth at 10 AM has been canceled. The reason noted is that you are not able to make it next week. Is there anything else I can help you with?\nAI: Thank you. Just to confirm, if I check back later, will it show that it's canceled?\nUser: Yes. If you check back later, it will show that your appointment is canceled. Let me know if you need anything else.\nAI: Great. Thank you. That's all I needed. Have a good day.\nUser: Got it. Have a good day, sir.\nAI: Thanks. You too.\n",
+    "recording_url": "https://storage.vapi.ai/019c71b7-f904-7aad-aea7-8e028c4acc66-1771434567240-3bf3c71b-4104-48cb-b1c4-ce4cd6762116-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Sarah, the birthday you gave doesn't match our records. But for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I need to cancel my upcoming appointment."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. We check your upcoming appointment so we can cancel the right 1."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "It's my knee appointment next week."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You have a follow-up appointment for your knee on Thursday, February 20 sixth. At 10 AM. With doctor Dody Howes."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Yes. That's the 1. Can you cancel it for me, please?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Can you tell me the reason you need to cancel this appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'm just not able to make it next week."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your follow-up appointment with doctor Dutti Howe on Thursday, February 20 sixth at 10 AM has been canceled. The reason noted is that you are not able to make it next week. Is there anything else I can help you with?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank you. Just to confirm, if I check back later, will it show that it's canceled?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. If you check back later, it will show that your appointment is canceled. Let me know if you need anything else."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you. That's all I needed. Have a good day."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Have a good day, sir."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. You too."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T17:09:30.649791+00:00"
+}

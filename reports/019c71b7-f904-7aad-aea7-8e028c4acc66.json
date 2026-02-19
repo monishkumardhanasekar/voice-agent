@@ -1,0 +1,76 @@
+{
+  "call_id": "019c71b7-f904-7aad-aea7-8e028c4acc66",
+  "scenario": {
+    "id": "rescheduling_cancel",
+    "category": "rescheduling",
+    "name": "Cancel appointment"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 9,
+      "reason": "The bot successfully canceled the appointment and confirmed the cancellation to the patient in Turn 14."
+    },
+    "comprehension_and_relevance": {
+      "score": 9,
+      "reason": "The bot understood the patient's request to cancel the appointment and responded appropriately throughout the call."
+    },
+    "accuracy_and_consistency": {
+      "score": 8,
+      "reason": "The bot accurately identified the appointment details but mispronounced the doctor's name as 'Dutti Howe' instead of 'Dody Howes' in Turn 14."
+    },
+    "appropriate_boundaries": {
+      "score": 10,
+      "reason": "The bot did not fabricate any information and handled the cancellation process correctly."
+    },
+    "conversational_quality": {
+      "score": 7,
+      "reason": "The bot's speech was mostly clear, but there was awkward phrasing in Turn 8 ('check your upcoming appointment so we can cancel the right 1')."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient using the provided name and date of birth."
+    },
+    "context_retention": {
+      "score": 10,
+      "reason": "The bot retained context well, remembering the appointment details and the reason for cancellation."
+    },
+    "focus": {
+      "score": 10,
+      "reason": "The bot remained focused on the task of canceling the appointment without any unnecessary detours."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent confirm which appointment to cancel?",
+      "verdict": "yes",
+      "reason": "The bot confirmed the appointment details before proceeding with the cancellation."
+    },
+    {
+      "hint": "Was cancellation confirmed clearly?",
+      "verdict": "yes",
+      "reason": "The bot clearly confirmed the cancellation in Turn 14."
+    },
+    {
+      "hint": "Was the process consistent (not erratic)?",
+      "verdict": "yes",
+      "reason": "The bot maintained a consistent process throughout the call."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "minor",
+      "description": "The bot used awkward phrasing in Turn 8 ('check your upcoming appointment so we can cancel the right 1').",
+      "turn_number": 8,
+      "quote": "We check your upcoming appointment so we can cancel the right 1."
+    },
+    {
+      "type": "detail_inaccuracy",
+      "severity": "minor",
+      "description": "The bot mispronounced the doctor's name as 'Dutti Howe' instead of 'Dody Howes' in Turn 14.",
+      "turn_number": 14,
+      "quote": "Your follow-up appointment with doctor Dutti Howe on Thursday, February 20 sixth at 10 AM has been canceled."
+    }
+  ],
+  "summary": "The bot effectively canceled the patient's appointment and confirmed the cancellation clearly. However, there were minor issues with awkward phrasing and a mispronunciation of the doctor's name."
+}

@@ -1,0 +1,239 @@
+{
+  "call_id": "019c6fdb-5ec9-7bb0-a9f0-152f16dee953",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T08:26:21.081Z",
+  "ended_at": "2026-02-18T08:31:23.942Z",
+  "scenario": {
+    "id": "scheduling_vague_day_reference",
+    "category": "scheduling",
+    "name": "Vague day reference — 'this Thursday' / 'next Friday'",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah. I'd like to schedule a checkup, please.\nUser: Got it, Sarah. Can you tell me your date of birth to verify your identity before I schedule your checkup?\nAI: Sure. It's March fifteenth 19 79.\nUser: Sarah, your birthday doesn't match our record, but for demo purposes, I'll accept it. Let me get started on scheduling\nAI: Okay. Thanks.\nUser: Thanks, Sarah. For your checkup, we offer a few types of appointments. Are you looking for a new patient consultation? A follow-up consultation, a procedure, or a physical therapy session? If you're not sure, just let me know what you need help with.\nAI: I'm looking for a general checkup. It's been a while since my last physical.\nUser: Understood. At Pivot Point Orthopedics, we focus on orthopedic care. Our closest option to a general checkup is a new patient consultation. Or a follow-up consultation if you've seen us before. Would you like to book a new patient consultation or a follow-up?\nAI: I see. Let's go with a new patient consultation then. Can I come in this Thursday?\nUser: Got it. Let me check available times for a new patient consultation this Thursday. 1 moment while I look that up.\nAI: Sure. No problem.\nUser: The next\nAI: Hello? Are you still\nUser: the next\nAI: hello? Are you still there?\nUser: Yes. I'm here. The next available new patient consultation is Thursday, February 20 sixth. We have openings at 12 PM, 12 45 PM.\nAI: Wait. Wait. I was hoping for this Thursday. Is there anything on Thursday, nineteenth?\nUser: I checked, but the earliest Thursday available is February 20 sixth. There are no open slots this Thursday, February nineteenth. Would you like to book for February 20 sixth? Or check other days?\nAI: Okay. How about next Friday then?\nUser: Let me check for available new patient consultations next Friday. 1 moment while I look that up.\nAI: Alright. Okay. Thanks.\nUser: Next Friday, February 20 seventh, we have openings at 9 AM, 9 45 AM, and 10 30 AM with doctor Adam Bricker. Would you like to book 1 of these times?\nAI: Yes. I'll take the 9 AM slot, please, just to confirm that's next Friday, February 20 seventh.\nUser: Got it. To confirm you'd like to book a new patient\nAI: Great.\nAI: Yes. That's\nUser: Let me confirm booking you\nAI: Okay.\nUser: Your appointment is set for Friday, February 20 seventh at 9 AM. With doctor Adam Fricker. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment?\nAI: Yes, please. A text reminder would be great. Thank you.\nUser: You'll get a text reminder soon at your number ending in 0 7 8 8. If you have any other questions or need to change your appointment, just let me know.\nAI: Actually, my phone number ends in 0 1 2 3. Can you update that for me?\nUser: I can't update your phone number directly, but I'll let our clinic support team know to update it to end in 0 1 2 3. They'll follow-up with you as soon as possible. Please stay on the line while I document this for the team.\nAI: Alright. Thank you.\nUser: Your request to update your phone number has been sent to the clinic staff. They'll review and confirm the change soon. If you need anything else, just let me know.\nAI: That's all. Thank you so much for your help. Goodbye.\nUser: Got it. Have a great day, sir.\nAI: Thanks.\nUser: Goodbye.\nAI: Goodbye.\nUser: You're welcome.\nAI: Thanks again\n",
+    "recording_url": "https://storage.vapi.ai/019c6fdb-5ec9-7bb0-a9f0-152f16dee953-1771403486651-15766e47-3483-4a09-895a-51bf57c6ce2a-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah. I'd like to schedule a checkup, please."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you tell me your date of birth to verify your identity before I schedule your checkup?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Sarah, your birthday doesn't match our record, but for demo purposes, I'll accept it. Let me get started on scheduling"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Thanks, Sarah. For your checkup, we offer a few types of appointments. Are you looking for a new patient consultation? A follow-up consultation, a procedure, or a physical therapy session? If you're not sure, just let me know what you need help with."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I'm looking for a general checkup. It's been a while since my last physical."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. At Pivot Point Orthopedics, we focus on orthopedic care. Our closest option to a general checkup is a new patient consultation. Or a follow-up consultation if you've seen us before. Would you like to book a new patient consultation or a follow-up?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I see. Let's go with a new patient consultation then. Can I come in this Thursday?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Let me check available times for a new patient consultation this Thursday. 1 moment while I look that up."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. No problem."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The next"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you still"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "the next"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "hello? Are you still there?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. I'm here. The next available new patient consultation is Thursday, February 20 sixth. We have openings at 12 PM, 12 45 PM."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Wait. Wait. I was hoping for this Thursday. Is there anything on Thursday, nineteenth?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I checked, but the earliest Thursday available is February 20 sixth. There are no open slots this Thursday, February nineteenth. Would you like to book for February 20 sixth? Or check other days?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. How about next Friday then?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me check for available new patient consultations next Friday. 1 moment while I look that up."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Next Friday, February 20 seventh, we have openings at 9 AM, 9 45 AM, and 10 30 AM with doctor Adam Bricker. Would you like to book 1 of these times?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. I'll take the 9 AM slot, please, just to confirm that's next Friday, February 20 seventh."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. To confirm you'd like to book a new patient"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me confirm booking you"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your appointment is set for Friday, February 20 seventh at 9 AM. With doctor Adam Fricker. Please bring a government issued photo ID and your insurance card. Would you like a text reminder for this appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes, please. A text reminder would be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon at your number ending in 0 7 8 8. If you have any other questions or need to change your appointment, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, my phone number ends in 0 1 2 3. Can you update that for me?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I can't update your phone number directly, but I'll let our clinic support team know to update it to end in 0 1 2 3. They'll follow-up with you as soon as possible. Please stay on the line while I document this for the team."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Alright. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your request to update your phone number has been sent to the clinic staff. They'll review and confirm the change soon. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "That's all. Thank you so much for your help. Goodbye."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Have a great day, sir."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Goodbye."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You're welcome."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks again"
+    }
+  ],
+  "webhook_received_at": "2026-02-18T08:31:30.255547+00:00"
+}

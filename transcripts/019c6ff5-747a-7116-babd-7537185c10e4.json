@@ -1,0 +1,134 @@
+{
+  "call_id": "019c6ff5-747a-7116-babd-7537185c10e4",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T08:54:51.111Z",
+  "ended_at": "2026-02-18T08:57:27.576Z",
+  "scenario": {
+    "id": "refill_standard",
+    "category": "refill",
+    "name": "Standard medication refill",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedic. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah.\nUser: Got it, Sarah. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifth 19 79.\nUser: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?\nAI: I need to refill my meloxicam prescription.\nUser: Got it. What dosage of meloxicam do you take, and how often do you take it?\nAI: I take 15 milligrams once daily.\nUser: Thanks. When did you last have your meloxicam?\nAI: I took it this morning.\nUser: Got it. How many days of meloxicam do you have left?\nAI: I have about a week of pills remaining.\nUser: Understood. Which pharmacy do you use? Please confirm the location.\nAI: I use the CVS in Hermitage TN.\nUser: It looks like I couldn't find any medications on file for you. Can you confirm the exact name of the medication you need refilled? Is it meloxicam, or is it listed under a different name?\nAI: It's meloxicam. That's the name I have for it.\nUser: Let me try sending your refill request again. 1 moment.\nAI: Okay. Thank you.\nUser: Connecting you to a representative. Please wait.\nAI: Hello? Are you still there? Hello?\nUser: Hello. You've reached the Pretty Good AI test line. Goodbye.\nAI: Goodbye.\n",
+    "recording_url": "https://storage.vapi.ai/019c6ff5-747a-7116-babd-7537185c10e4-1771405050237-6bafc5dc-7b14-490e-adec-7133e482b593-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedic. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I need to refill my meloxicam prescription."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. What dosage of meloxicam do you take, and how often do you take it?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I take 15 milligrams once daily."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Thanks. When did you last have your meloxicam?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I took it this morning."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. How many days of meloxicam do you have left?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I have about a week of pills remaining."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. Which pharmacy do you use? Please confirm the location."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I use the CVS in Hermitage TN."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "It looks like I couldn't find any medications on file for you. Can you confirm the exact name of the medication you need refilled? Is it meloxicam, or is it listed under a different name?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "It's meloxicam. That's the name I have for it."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me try sending your refill request again. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Connecting you to a representative. Please wait."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello? Are you still there? Hello?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Goodbye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T08:57:33.621685+00:00"
+}

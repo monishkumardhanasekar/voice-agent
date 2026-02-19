@@ -1,0 +1,88 @@
+{
+  "call_id": "019c71e6-11c4-733f-af7f-e25e054cf045",
+  "scenario": {
+    "id": "scheduling_specialist_routing",
+    "category": "scheduling",
+    "name": "Force specialist routing — meniscus / spine"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 8,
+      "reason": "The bot successfully scheduled an appointment with an orthopedic doctor for the patient's meniscus tear, confirming the date, time, and provider (Turn 25)."
+    },
+    "comprehension_and_relevance": {
+      "score": 9,
+      "reason": "The bot understood the patient's need for a knee specialist and responded appropriately by offering an orthopedic consultation (Turn 10)."
+    },
+    "accuracy_and_consistency": {
+      "score": 7,
+      "reason": "The bot provided accurate details about the appointment but incorrectly referred to 'Doctor Judy Hauser' as 'Doctor Dudi Hauser' later (Turn 25)."
+    },
+    "appropriate_boundaries": {
+      "score": 8,
+      "reason": "The bot handled its limitations well by informing the patient that it couldn't directly update the phone number and would notify the clinic staff (Turn 29)."
+    },
+    "conversational_quality": {
+      "score": 6,
+      "reason": "There were multiple instances of awkward phrasing and truncation, such as 'consultate' and 'Nope' (Turns 14, 22)."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient using the name and DOB provided (Turn 4)."
+    },
+    "context_retention": {
+      "score": 9,
+      "reason": "The bot retained context well throughout the call, remembering the patient's need for a knee specialist and the appointment details."
+    },
+    "focus": {
+      "score": 10,
+      "reason": "The bot remained focused on scheduling the appropriate specialist appointment for the patient's condition."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Did the agent pay attention to the specific condition (meniscus tear / spine specialist)?",
+      "verdict": "yes",
+      "reason": "The bot recognized the need for a knee specialist for the meniscus tear."
+    },
+    {
+      "hint": "Did the agent pick an appropriate specialist type (orthopedic knee vs spine) instead of a random doctor?",
+      "verdict": "yes",
+      "reason": "The bot correctly routed the patient to an orthopedic doctor for a knee issue."
+    },
+    {
+      "hint": "Did the agent clearly state the provider type when booking?",
+      "verdict": "yes",
+      "reason": "The bot stated that Doctor Hauser evaluates joint injuries, including knee issues (Turn 20)."
+    },
+    {
+      "hint": "If multiple options existed, did the agent help pick the correct specialist?",
+      "verdict": "yes",
+      "reason": "The bot offered an orthopedic consultation, which was appropriate for the patient's condition."
+    }
+  ],
+  "issues": [
+    {
+      "type": "awkward_phrasing",
+      "severity": "minor",
+      "description": "The bot used awkward phrasing with 'Nope' in response to the patient's incomplete statement.",
+      "turn_number": 14,
+      "quote": "Nope."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "minor",
+      "description": "The bot truncated the word 'consultation' as 'consultate'.",
+      "turn_number": 22,
+      "quote": "consultate"
+    },
+    {
+      "type": "detail_inaccuracy",
+      "severity": "minor",
+      "description": "The bot referred to the doctor as 'Dudi Hauser' instead of 'Judy Hauser'.",
+      "turn_number": 25,
+      "quote": "doctor Dudi Hauser"
+    }
+  ],
+  "summary": "The bot effectively scheduled an appointment with the correct specialist for the patient's meniscus tear, demonstrating good comprehension and focus. However, there were minor issues with awkward phrasing and a detail inaccuracy regarding the doctor's name."
+}

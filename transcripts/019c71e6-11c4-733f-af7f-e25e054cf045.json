@@ -1,0 +1,189 @@
+{
+  "call_id": "019c71e6-11c4-733f-af7f-e25e054cf045",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T17:57:17.024Z",
+  "ended_at": "2026-02-18T18:01:52.288Z",
+  "scenario": {
+    "id": "scheduling_specialist_routing",
+    "category": "scheduling",
+    "name": "Force specialist routing — meniscus / spine",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah Martinez.\nUser: Got it, Sarah. Can you please tell me your date of birth to verify your identity?\nAI: Sure. It's March fifteenth 19 79.\nUser: The birthday doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?\nAI: I was told I need to see a specialist, and I want to schedule that appointment.\nUser: Got it. Do you know what kind of specialist or appointment you need? Or you like a quick overview of your options?\nAI: I have a meniscus tear from an MRI last month, and I was told I need to see a knee specialist.\nUser: Understood. For a meniscus tear, you'll want an orthopedic consultation. Would you like to book a new patient consultation? Or have you seen 1 of our orthopedic doctors here before?\nAI: I haven't seen an orthopedic doctor at your clinic before, so I'd like to book a new patient consultation.\nUser: Perfect. We offer new patient consultations with our orthopedic doctors. Do you have a preferred provider? Or would you like to hear about your options?\nAI: I don't have a preferred\nUser: Nope.\nAI: Um, I don't have a preferred provider.\nUser: Understood. Let me check available new patient consultation times with our orthopedic doctors. 1 moment while I fetch the openings.\nAI: Okay. Thanks.\nUser: We have openings for a new patient consultation with doctor Dougie Hauser. On Thursday, February 20 sixth at 1 30 PM 2 15 PM, and 3 45 PM. Would you like to book 1 of these times?\nAI: Is doctor Hauser a knee specialist?\nUser: Doctor Judy Hauser is an orthopedic doctor who evaluates joint injuries, including knee issues like meniscus tears, these are good fit for your situation. You like to book with him?\nAI: Yes. That sounds good. Can I book the 1 30 PM slot on February 26?\nUser: Let me confirm. You're requesting a new patient consultate\nAI: Okay.\nAI: Yes. That's right. A new patient consultation at 1 30 PM on February 26.\nUser: Your new patient consultation is set for Thursday, February 20 sixth at 1 30 PM with doctor Dudi Hauser. Please bring a government issued photo ID and your insurance card to the appointment. Would you like a text reminder for this visit?\nAI: Yes. A text reminder would be great. Thank you.\nUser: You'll get a text reminder soon. At your number ending in 5 3 1 4. If you have any other questions or need to change your appointment, just let us know.\nAI: Actually, my phone number ends in 0 1 2 3, not 5 3 1 4. Could you update that?\nUser: I can't update your phone number direct directly, but I'll let our clinic support team know to update your contact info. They'll reach out to confirm the change.\nAI: Okay. Thanks for letting me know. I appreciate it.\nUser: Your request to update your phone number has been sent to the clinic staff. They'll reach out soon to confirm and update your contact info. Your appointment is all set. Let me know if you need anything else.\nAI: Great. Thank you for your help. That's all for now.\nUser: Got it, Sarah. Your appointment? And request are set. Have a great day.\nAI: Thank thank you. You too. Bye.\n",
+    "recording_url": "https://storage.vapi.ai/019c71e6-11c4-733f-af7f-e25e054cf045-1771437714895-b7ed94bf-168b-4769-99f5-43d8bc1c5580-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah Martinez."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you please tell me your date of birth to verify your identity?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Sure. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I was told I need to see a specialist, and I want to schedule that appointment."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Do you know what kind of specialist or appointment you need? Or you like a quick overview of your options?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I have a meniscus tear from an MRI last month, and I was told I need to see a knee specialist."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. For a meniscus tear, you'll want an orthopedic consultation. Would you like to book a new patient consultation? Or have you seen 1 of our orthopedic doctors here before?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I haven't seen an orthopedic doctor at your clinic before, so I'd like to book a new patient consultation."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Perfect. We offer new patient consultations with our orthopedic doctors. Do you have a preferred provider? Or would you like to hear about your options?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I don't have a preferred"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Nope."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Um, I don't have a preferred provider."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Understood. Let me check available new patient consultation times with our orthopedic doctors. 1 moment while I fetch the openings."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have openings for a new patient consultation with doctor Dougie Hauser. On Thursday, February 20 sixth at 1 30 PM 2 15 PM, and 3 45 PM. Would you like to book 1 of these times?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Is doctor Hauser a knee specialist?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Doctor Judy Hauser is an orthopedic doctor who evaluates joint injuries, including knee issues like meniscus tears, these are good fit for your situation. You like to book with him?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That sounds good. Can I book the 1 30 PM slot on February 26?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me confirm. You're requesting a new patient consultate"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That's right. A new patient consultation at 1 30 PM on February 26."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your new patient consultation is set for Thursday, February 20 sixth at 1 30 PM with doctor Dudi Hauser. Please bring a government issued photo ID and your insurance card to the appointment. Would you like a text reminder for this visit?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. A text reminder would be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder soon. At your number ending in 5 3 1 4. If you have any other questions or need to change your appointment, just let us know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, my phone number ends in 0 1 2 3, not 5 3 1 4. Could you update that?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I can't update your phone number direct directly, but I'll let our clinic support team know to update your contact info. They'll reach out to confirm the change."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks for letting me know. I appreciate it."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your request to update your phone number has been sent to the clinic staff. They'll reach out soon to confirm and update your contact info. Your appointment is all set. Let me know if you need anything else."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you for your help. That's all for now."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Your appointment? And request are set. Have a great day."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank thank you. You too. Bye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T18:01:57.732667+00:00"
+}

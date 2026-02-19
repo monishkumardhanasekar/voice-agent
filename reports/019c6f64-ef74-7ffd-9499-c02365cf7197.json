@@ -1,0 +1,83 @@
+{
+  "call_id": "019c6f64-ef74-7ffd-9499-c02365cf7197",
+  "scenario": {
+    "id": "office_info_hours_location",
+    "category": "office_info",
+    "name": "Office hours and location"
+  },
+  "scores": {
+    "task_resolution": {
+      "score": 5,
+      "reason": "The bot provided office hours and a partial address but failed to provide the full address with ZIP code and parking information as requested in turns 5 and 6."
+    },
+    "comprehension_and_relevance": {
+      "score": 7,
+      "reason": "The bot understood the patient's requests and provided relevant information about office hours and location but failed to provide complete information when asked for the full address and parking details."
+    },
+    "accuracy_and_consistency": {
+      "score": 6,
+      "reason": "The bot provided correct office hours and partial address but failed to deliver the full address with ZIP code as promised in turn 6."
+    },
+    "appropriate_boundaries": {
+      "score": 6,
+      "reason": "The bot admitted it didn't have parking details but failed to offer a concrete fallback for obtaining this information."
+    },
+    "conversational_quality": {
+      "score": 5,
+      "reason": "There were multiple instances of awkward phrasing and truncation in turns 10 and 12, affecting the natural flow of the conversation."
+    },
+    "patient_identification": {
+      "score": 10,
+      "reason": "The bot correctly identified the patient as Sarah without any issues."
+    },
+    "context_retention": {
+      "score": 9,
+      "reason": "The bot retained context well throughout the conversation, confirming details accurately without needing repetition."
+    },
+    "focus": {
+      "score": 9,
+      "reason": "The bot remained focused on the patient's request for office hours and location information without deviating from the topic."
+    }
+  },
+  "eval_hints": [
+    {
+      "hint": "Were office hours provided?",
+      "verdict": "yes",
+      "reason": "The bot provided the office hours in turn 4."
+    },
+    {
+      "hint": "Was address or directions given?",
+      "verdict": "partial",
+      "reason": "The bot provided a partial address without the ZIP code."
+    },
+    {
+      "hint": "Was information consistent and not hallucinated?",
+      "verdict": "partial",
+      "reason": "The bot provided consistent information but failed to deliver the full address as promised."
+    }
+  ],
+  "issues": [
+    {
+      "type": "detail_inaccuracy",
+      "severity": "major",
+      "description": "Failed to provide the full address with ZIP code when requested.",
+      "turn_number": 6,
+      "quote": "I can give you the full address, but I don't have the ZIP code or parking details."
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated and awkward phrasing in confirming details.",
+      "turn_number": 10,
+      "quote": "Yes. That's correct. We're open those hours at 2 2"
+    },
+    {
+      "type": "awkward_phrasing",
+      "severity": "major",
+      "description": "Truncated response affecting conversational quality.",
+      "turn_number": 12,
+      "quote": "Got it. Have a great day."
+    }
+  ],
+  "summary": "The bot successfully provided office hours and a partial address but failed to deliver the full address with ZIP code and parking information. Multiple instances of awkward phrasing and truncation affected the conversational quality. The bot maintained focus and context well but did not offer a fallback for missing parking details."
+}

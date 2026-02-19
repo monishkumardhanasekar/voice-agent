@@ -1,0 +1,239 @@
+{
+  "call_id": "019c7189-8a89-7bb0-95a8-83f79ca4a01c",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T16:16:13.290Z",
+  "ended_at": "2026-02-18T16:21:42.538Z",
+  "scenario": {
+    "id": "edge_confusing_contradictory",
+    "category": "edge_cases",
+    "name": "Confusing and contradictory requests",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yeah. This is Sarah. I need to figure out my appointment but I'm a little all over the place on timing.\nUser: Got it, Sarah. Can you tell me your date of birth so I can\nAI: Yeah. It's March fifteenth 19 79.\nUser: The birthday you gave doesn't match our records. But for demo purposes, I'll accept it.\nAI: Okay. Sure.\nUser: you have 2 upcoming appointments. 1 is a follow-up with doctor duty\nAI: Um, I think that might be the 1\nUser: go ahead.\nAI: I Um, actually, could you remind me what day that follow-up is?\nUser: Your follow-up with doctor Judy Houser is on Monday. February 20 third at 10 AM. That sound right?\nAI: Actually, I'm not sure if Monday works for me. Do you have anything available later in the week?\nUser: Let me check for openings with doctor Hauser later in the week. 1 moment while I look that up.\nAI: Okay. Thanks.\nUser: I ran into a technical issue while checking for new times. Let me try again to find openings for you.\nAI: No problem. I'll wait.\nUser: You have a follow-up with doctor Doobie Hauser on Monday. February 20 third at 10 AM. And a new patient consultation with doctor Bricker on Friday, February 20 seventh, at 9 45 AM. I'll look for later options in the week for your follow-up with doctor Hauser. 1 moment.\nAI: Okay. That'd be great. Thank you.\nUser: We have follow-up updates with doctor Hauser later in the week. For example, there's Wednesday, February 20 fifth at 10 AM. Or Thursday, February 20 sixth at 10 AM. Would either of those work for you, or do you have a different day or time in mind?\nAI: Let me think. I think Wednesday might work. What time did you say for Wednesday again?\nUser: On Wednesday, February 20 fifth, there's a 10 AM slot available for your follow-up with doctor Houser. Would you like to reschedule to that time?\nAI: Yeah. Let's go with Wednesday at 10 AM. Thanks.\nUser: Just to confirm, you want to move your follow-up with doctor Houser to Wednesday, February 20 fifth at 10 AM. Is that correct?\nAI: Wait. I think I said Thursday earlier. Right?\nUser: You mentioned Wednesday just now, but Thursday is also available. Would you prefer Thursday, February 20 sixth at 10 AM instead?\nAI: Oh, okay. Let's go with Thursday at 10 AM then. Sorry for the confusion.\nUser: No problem, sir. To confirm, you want to reschedule your follow-up with\nAI: Thank.\nAI: Actually, it's May.\nUser: confirming, would you like to move your follow-up\nAI: Yes. To Thursday at 10 AM.\nUser: Thank you for\nAI: Could you just summarize what we ended up with?\nUser: got it.\nAI: What day and time and what exactly will happen\nUser: You're all set to move your follow-up with doctor Dewey Houser to Thursday, February 26 at 10 AM. Is a follow-up consultation where you'll review your progress and update your care plan. Does that sound right before I finish the reschedule?\nAI: Yes. That sounds right. Thank you for confirming.\nUser: Your follow-up with doctor Dudi Hauser is now set for Thursday, February 20 sixth. At 10 AM. You'll review your progress and update your care plan during this visit. Would you like a text reminder for your appointment?\nAI: Yes. A text reminder would be great. Thanks.\nUser: You'll get a text reminder for your appointment soon. If you need anything else, just let me know.\nAI: Okay. That's all. Thanks so much.\nUser: Got it. Your appointment is set. And a reminder is on the way. Have a great day, Sarah.\nAI: Thanks. You too.\n",
+    "recording_url": "https://storage.vapi.ai/019c7189-8a89-7bb0-95a8-83f79ca4a01c-1771431705237-2726fe6f-174c-4d9a-be6d-77aba237d670-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yeah. This is Sarah. I need to figure out my appointment but I'm a little all over the place on timing."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it, Sarah. Can you tell me your date of birth so I can"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yeah. It's March fifteenth 19 79."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "The birthday you gave doesn't match our records. But for demo purposes, I'll accept it."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Sure."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "you have 2 upcoming appointments. 1 is a follow-up with doctor duty"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Um, I think that might be the 1"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "go ahead."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "I Um, actually, could you remind me what day that follow-up is?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your follow-up with doctor Judy Houser is on Monday. February 20 third at 10 AM. That sound right?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, I'm not sure if Monday works for me. Do you have anything available later in the week?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Let me check for openings with doctor Hauser later in the week. 1 moment while I look that up."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I ran into a technical issue while checking for new times. Let me try again to find openings for you."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "No problem. I'll wait."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You have a follow-up with doctor Doobie Hauser on Monday. February 20 third at 10 AM. And a new patient consultation with doctor Bricker on Friday, February 20 seventh, at 9 45 AM. I'll look for later options in the week for your follow-up with doctor Hauser. 1 moment."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. That'd be great. Thank you."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "We have follow-up updates with doctor Hauser later in the week. For example, there's Wednesday, February 20 fifth at 10 AM. Or Thursday, February 20 sixth at 10 AM. Would either of those work for you, or do you have a different day or time in mind?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Let me think. I think Wednesday might work. What time did you say for Wednesday again?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "On Wednesday, February 20 fifth, there's a 10 AM slot available for your follow-up with doctor Houser. Would you like to reschedule to that time?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yeah. Let's go with Wednesday at 10 AM. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Just to confirm, you want to move your follow-up with doctor Houser to Wednesday, February 20 fifth at 10 AM. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Wait. I think I said Thursday earlier. Right?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You mentioned Wednesday just now, but Thursday is also available. Would you prefer Thursday, February 20 sixth at 10 AM instead?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Oh, okay. Let's go with Thursday at 10 AM then. Sorry for the confusion."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "No problem, sir. To confirm, you want to reschedule your follow-up with"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thank."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Actually, it's May."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "confirming, would you like to move your follow-up"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. To Thursday at 10 AM."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Thank you for"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Could you just summarize what we ended up with?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "got it."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "What day and time and what exactly will happen"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You're all set to move your follow-up with doctor Dewey Houser to Thursday, February 26 at 10 AM. Is a follow-up consultation where you'll review your progress and update your care plan. Does that sound right before I finish the reschedule?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. That sounds right. Thank you for confirming."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Your follow-up with doctor Dudi Hauser is now set for Thursday, February 20 sixth. At 10 AM. You'll review your progress and update your care plan during this visit. Would you like a text reminder for your appointment?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. A text reminder would be great. Thanks."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "You'll get a text reminder for your appointment soon. If you need anything else, just let me know."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Okay. That's all. Thanks so much."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Your appointment is set. And a reminder is on the way. Have a great day, Sarah."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Thanks. You too."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T16:21:48.530695+00:00"
+}

@@ -1,0 +1,84 @@
+{
+  "call_id": "019c6f64-ef74-7ffd-9499-c02365cf7197",
+  "ended_reason": "customer-ended-call",
+  "started_at": "2026-02-18T06:16:59.210Z",
+  "ended_at": "2026-02-18T06:19:03.912Z",
+  "scenario": {
+    "id": "office_info_hours_location",
+    "category": "office_info",
+    "name": "Office hours and location",
+    "run_index": 1
+  },
+  "artifact": {
+    "raw_transcript": "AI: Hello.\nUser: For quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?\nAI: Yes. This is Sarah. I was just calling to get your office hours and where exactly you're located.\nUser: Our office is called Pivot Point Orthopedics. We're at 2 2 0 Athens Lay, Nashville. Our hours are 9 AM to 4 PM, Monday, Tuesday, and Thursday, 12 PM to 7 PM on Wednesday, and 9 AM to 12 PM on Friday. Is there anything else I can help you with?\nAI: Can you give me the full address with the ZIP code? Also, is there parking on-site?\nUser: I can give you the full address, but I don't have the ZIP code or parking details. Would you like me to send the address to your phone by text?\nAI: That would be helpful. Could you also check if there's any information about parking available?\nUser: I'll send the address to your phone now. I don't have parking details, but most clinics have on-site parking. If you need more info, I can connect you to our support team. Would you like to speak with them?\nAI: That's okay. I'll check on the parking later. So just to confirm, you're open from 9 AM to 4 PM on Monday, Tuesday, and Thursday, 12 PM to 7 PM on Wednesday, and 9 AM to 12 PM on Friday at 220 Athens lay Nash Is that right?\nUser: Yes. That's correct. We're open those hours at 2 2\nAI: Great. Thank you. Thank you for confirming. Have a great day.\nUser: Got it. Have a great day.\nAI: You too. Bye.\n",
+    "recording_url": "https://storage.vapi.ai/019c6f64-ef74-7ffd-9499-c02365cf7197-1771395546597-e5f4e7f7-8c20-4514-a719-7e4682fd7358-mono.wav"
+  },
+  "turns": [
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Hello."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "For quality and training purposes. Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Sarah?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Yes. This is Sarah. I was just calling to get your office hours and where exactly you're located."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Our office is called Pivot Point Orthopedics. We're at 2 2 0 Athens Lay, Nashville. Our hours are 9 AM to 4 PM, Monday, Tuesday, and Thursday, 12 PM to 7 PM on Wednesday, and 9 AM to 12 PM on Friday. Is there anything else I can help you with?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Can you give me the full address with the ZIP code? Also, is there parking on-site?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I can give you the full address, but I don't have the ZIP code or parking details. Would you like me to send the address to your phone by text?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "That would be helpful. Could you also check if there's any information about parking available?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "I'll send the address to your phone now. I don't have parking details, but most clinics have on-site parking. If you need more info, I can connect you to our support team. Would you like to speak with them?"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "That's okay. I'll check on the parking later. So just to confirm, you're open from 9 AM to 4 PM on Monday, Tuesday, and Thursday, 12 PM to 7 PM on Wednesday, and 9 AM to 12 PM on Friday at 220 Athens lay Nash Is that right?"
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Yes. That's correct. We're open those hours at 2 2"
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "Great. Thank you. Thank you for confirming. Have a great day."
+    },
+    {
+      "speaker": "clinic",
+      "role": "user",
+      "text": "Got it. Have a great day."
+    },
+    {
+      "speaker": "patient",
+      "role": "bot",
+      "text": "You too. Bye."
+    }
+  ],
+  "webhook_received_at": "2026-02-18T06:19:09.145998+00:00"
+}
